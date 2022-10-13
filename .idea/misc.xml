@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Proyectos/gymbro/app/src/main/res/drawable/custom_login_edittext.xml" value="0.249" />
+        <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
       </map>
     </option>
   </component>
