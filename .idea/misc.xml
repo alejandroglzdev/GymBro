@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/drawable/custom_login_edittext.xml" value="0.249" />
-        <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
+        <entry key="..\:/Proyectos/gymbro/app/src/main/res/drawable/ic_back_arrow.xml" value="0.2545" />
+        <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
       </map>
     </option>
   </component>
