@@ -58,6 +58,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             app:boxStrokeColor="#0000ffff"
+            app:boxStrokeErrorColor="@color/error"
             app:boxStrokeWidth="0dp"
             app:helperText="¡Be creative!"
             app:helperTextEnabled="true"

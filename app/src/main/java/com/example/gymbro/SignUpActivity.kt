@@ -19,5 +19,19 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun setup() {
 
+        binding.nextButton.setOnClickListener() {
+            if (binding.usernameEditText.text.isNullOrEmpty()) {
+                binding.usernameEditText.error = "Username cannot be empty"
+            }
+            if (binding.emailEditText.text.isNullOrEmpty()) {
+                binding.emailEditText.error = "Email cannot be empty"
+            }
+            if (binding.phoneEditText.text.isNullOrEmpty()) {
+                binding.phoneEditText.error = "Phone cannot be empty"
+            }
+
+
+        }
+
     }
 }
