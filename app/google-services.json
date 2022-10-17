@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:531378913101:android:7489ecb42b3c050d30c104",
         "android_client_info": {
-          "package_name": "com.application.gymbro"
+          "package_name": "com.example.gymbro"
         }
       },
       "oauth_client": [
