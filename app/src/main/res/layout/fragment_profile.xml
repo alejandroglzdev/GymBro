@@ -122,12 +122,10 @@
                 android:id="@+id/loginButton_SignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/azul_turquesa"
-                android:fontFamily="sans-serif-black"
                 android:text="FOLLOW"
-                android:textColor="@color/black"
                 android:textSize="10sp"
-                app:cornerRadius="30dp"/>
+                app:cornerRadius="30dp"
+                style="@style/blueDefaultButton"/>
 
         </LinearLayout>
 
@@ -161,26 +159,31 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
+                android:layout_weight="33"
                 android:layout_marginRight="15dp"
                 android:text="Diet"
-                android:textColor="@color/black"
                 android:textSize="15sp"
-                android:fontFamily="sans-serif-black"
-                android:backgroundTint="@color/azul_turquesa"
-                app:cornerRadius="30dp"/>
+                app:cornerRadius="30dp"
+                style="@style/blueDefaultButton"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
-                android:layout_marginLeft="15dp"
-                android:backgroundTint="@color/azul_turquesa"
-                android:fontFamily="sans-serif-black"
-                android:text="Workout"
-                android:textColor="@color/black"
+                android:layout_weight="33"
+                android:text="Calendar"
                 android:textSize="15sp"
-                app:cornerRadius="30dp"/>
+                app:cornerRadius="30dp"
+                style="@style/blueDefaultButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:layout_marginLeft="15dp"
+                android:text="Workout"
+                android:textSize="15sp"
+                app:cornerRadius="30dp"
+                style="@style/blueDefaultButton"/>
 
         </LinearLayout>
 
@@ -191,6 +194,11 @@
         android:layout_height="0dp"
         android:layout_weight="45">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
 
     </LinearLayout>
