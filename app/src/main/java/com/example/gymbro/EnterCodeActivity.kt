@@ -1,11 +1,25 @@
 package com.example.gymbro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gymbro.databinding.ActivityEnterCodeBinding
 
 class EnterCodeActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityEnterCodeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_enter_code)
+        binding = ActivityEnterCodeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        configureUI()
+    }
+
+    private fun configureUI() {
+        binding.verifyButton.setOnClickListener {
+            val intent = Intent(this, CreateNewPasswordActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
