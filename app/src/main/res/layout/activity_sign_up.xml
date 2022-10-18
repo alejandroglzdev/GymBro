@@ -15,14 +15,15 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/arrowBackImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_back_arrow" />
+            app:srcCompat="@drawable/ic_arrow_back"
+            app:tint="@color/azul_turquesa"/>
 
         <TextView
             android:id="@+id/createAccountTextView"
@@ -36,7 +37,7 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/arrowBackImageView" />
 
         <TextView
             android:id="@+id/createAccountSubTextView"
@@ -257,13 +258,13 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/signUpTextButton"
+                android:id="@+id/signInTextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif-black"
-                android:text="Sign Up"
+                android:text="Sign In"
                 android:textColor="@color/azul_turquesa"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/signUpTextInfo" />
