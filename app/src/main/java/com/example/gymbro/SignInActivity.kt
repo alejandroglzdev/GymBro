@@ -23,5 +23,16 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, ResetPasswordActivity::class.java)
             startActivity(intent)
         }
+
+        binding.loginButtonSignIn.setOnClickListener {
+            val intent = Intent(this,FeedActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.signUpTextButton.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

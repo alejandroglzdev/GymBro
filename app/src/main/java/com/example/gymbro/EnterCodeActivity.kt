@@ -21,5 +21,11 @@ class EnterCodeActivity : AppCompatActivity() {
             val intent = Intent(this, CreateNewPasswordActivity::class.java)
             startActivity(intent)
         }
+
+        binding.arrowBackImageView.setOnClickListener {
+            val intent = Intent(this, ResetPasswordActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
     }
 }

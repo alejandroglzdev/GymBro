@@ -16,8 +16,10 @@
         android:layout_weight="10">
 
         <ImageView
+            android:id="@+id/arrowBackImageView"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_marginStart="10dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_arrow_back"
             app:tint="@color/azul_turquesa"/>
@@ -91,7 +93,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/usernameEditText_SignIn"
+                    android:id="@+id/codeEditText"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/rounded_corners_shape"

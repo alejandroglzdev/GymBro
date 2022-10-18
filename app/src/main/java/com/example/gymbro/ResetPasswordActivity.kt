@@ -21,5 +21,11 @@ class ResetPasswordActivity : AppCompatActivity() {
             val intent = Intent(this, EnterCodeActivity::class.java)
             startActivity(intent)
         }
+
+        binding.arrowBackImageView.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
     }
 }
