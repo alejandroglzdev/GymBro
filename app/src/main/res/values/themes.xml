@@ -17,6 +17,4 @@
         <!-- Splash screen customization -->
         <item name="android:windowSplashScreenBackground">@color/azul_oscuro</item>
     </style>
-
-
 </resources>
