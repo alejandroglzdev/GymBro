@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            tools:src="@drawable/ic_person"/>
+            android:src="@drawable/ic_person"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +47,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="300dp"
+        android:background="@color/black">
 
         <ImageView
             android:layout_width="match_parent"
@@ -65,19 +66,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_marginBottom="2dp">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginRight="8dp"
-                app:tint="@color/azul_turquesa"
+                app:tint="@color/white"
                 android:src="@drawable/ic_favorite_off"/>
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                app:tint="@color/azul_turquesa"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:tint="@color/white"
                 android:src="@drawable/ic_comment"/>
 
         </LinearLayout>

@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/azul_oscuro"
+    android:orientation="vertical"
     tools:context=".FeedActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:gravity="center|left">
+        android:orientation="horizontal"
+        android:background="#312B43">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!--TODO: Hacer el logo con todas las letras en horizontal-->
+
+        <ImageView
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="GymBro"
-            android:textSize="20sp"
-            android:textColor="@color/gris_oscuro"/>
+            android:layout_marginStart="5dp"
+            android:src="@drawable/logo_app_blanco"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_favorite_off"
+                app:tint="@color/white"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_direct_message"
+                app:tint="@color/white"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -34,7 +56,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/feedRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 
