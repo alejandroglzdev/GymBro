@@ -5,9 +5,9 @@ class Post(
     var username: String?,
     var location: String?,
     var postPhoto: String?,
-    var numberOfLikes: Int?,
+    var numberOfLikes: String?,
     var description: String?,
-    var numberOfComments: Int?
+    var numberOfComments: String?
 ) {
 
 }

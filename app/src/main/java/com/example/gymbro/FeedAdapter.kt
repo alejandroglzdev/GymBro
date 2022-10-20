@@ -26,7 +26,9 @@ class FeedAdapter(private val dataSet: Array<Post>) :
 
         viewHolder.usernameTextView.text = dataSet[position].username
         viewHolder.usernameLocation.text = dataSet[position].location
-        viewHolder
+        viewHolder.likes.text = dataSet[position].numberOfLikes + " likes"
+        viewHolder.usernameAndDescription.text = dataSet[position].username + " | " + dataSet[position].description
+        viewHolder.numberOfComments.text = "Show " + dataSet[position].numberOfComments + " comments"
     }
 
     // Return the size of your dataset (invoked by the layout manager)

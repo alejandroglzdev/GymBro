@@ -21,10 +21,10 @@ class FeedActivity : AppCompatActivity() {
 
     private fun configureUI() {
 
-        val data = arrayOf(Post("photo", "AlejandroG", "Terrassa", "photoP", 1000, "Description...",32),
-            Post("photo", "AdriF", "Terrassa", "photoP", 32, "Description...",12),
-            Post("photo", "Adam", "Barcelona", "photoP", 345, "Description...",100),
-            Post("photo", "AlejandroG", "Terrassa", "photoP", 1000, "Description...",32))
+        val data = arrayOf(Post("photo", "AlejandroG", "Terrassa", "photoP", "1000", "Description...","32"),
+            Post("photo", "AdriF", "Terrassa", "photoP", "32" + " likes", "Description...","12"),
+            Post("photo", "Adam", "Barcelona", "photoP", "345", "Description...","100"),
+            Post("photo", "AlejandroG", "Terrassa", "photoP", "1000", "Description...","32"))
         binding.feedRecyclerView.layoutManager = linearLayoutManager
         binding.feedRecyclerView.adapter = FeedAdapter(data)
     }
