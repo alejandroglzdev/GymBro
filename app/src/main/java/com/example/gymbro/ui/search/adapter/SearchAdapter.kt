@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
@@ -27,8 +28,8 @@ class SearchAdapter(private val dataSet: Array<Post>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
 
-        viewHolder.colorPhotoImageView.setImageResource(dataSet[position].postPhoto.toInt())
-        viewHolder.colorPhotoImageView.background = dataSet[position].photoBackground
+        viewHolder.colorPhotoImageView.setImageResource(dataSet[position].postPhoto)
+        viewHolder.colorPhotoImageView.setBackgroundColor(dataSet[position].photoBackground)
     }
 
     // Return the size of your dataset (invoked by the layout manager)
