@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/azul_oscuro"
-    tools:context=".EnterCodeActivity">
+    tools:context=".ui.resetPassword.EnterCodeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

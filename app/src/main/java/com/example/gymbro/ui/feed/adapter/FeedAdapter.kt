@@ -1,10 +1,12 @@
-package com.example.gymbro
+package com.example.gymbro.ui.feed.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gymbro.R
+import com.example.gymbro.classes.Post
 
 class FeedAdapter(private val dataSet: Array<Post>) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {

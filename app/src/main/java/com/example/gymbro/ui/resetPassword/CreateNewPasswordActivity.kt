@@ -1,9 +1,10 @@
-package com.example.gymbro
+package com.example.gymbro.ui.resetPassword
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymbro.databinding.ActivityCreateNewPasswordBinding
+import com.example.gymbro.ui.login.SignInActivity
 
 class CreateNewPasswordActivity : AppCompatActivity() {
     private lateinit var binding : ActivityCreateNewPasswordBinding
