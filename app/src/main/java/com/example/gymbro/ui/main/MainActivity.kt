@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.homeImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .add(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
+                .replace(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
 
             Log.d(TAG, "MainActivity:onCreate: ")
         }
@@ -39,11 +39,21 @@ class MainActivity : AppCompatActivity() {
         binding.dietImageView.setOnClickListener { }
 
         binding.searchImageView.setOnClickListener {
+
+
             supportFragmentManager
                 .beginTransaction()
-                .add(R.id.fragmentContainer, SearchFragment.newInstance("","")).commit()
+                .replace(R.id.fragmentContainer, SearchFragment.newInstance("", "")).commit()
 
-            Log.d(TAG, "MainActivity:onCreate: ")
+                Log.d(TAG, "MainActivity:onCreate: ")
+
+
+            /*
+            fragmentTransaction.replace(R.id.fragmentContainer, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+
+             */
         }
 
         binding.trainingImageView.setOnClickListener { }

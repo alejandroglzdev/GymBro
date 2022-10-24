@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
 import com.example.gymbro.databinding.FragmentSearchBinding
-import com.example.gymbro.ui.feed.adapter.FeedAdapter
+import com.example.gymbro.ui.search.adapter.SearchAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,11 +80,52 @@ class SearchFragment : Fragment() {
                 "Description...",
                 "32",
                 R.color.black
+            ),
+            Post(
+                "photo",
+                "AlejandroG",
+                "Terrassa",
+                R.drawable.logo_app_negro,
+                "1000",
+                "Description...",
+                "32",
+                R.color.white
+            ),
+            Post(
+                "photo",
+                "AdriF",
+                "Terrassa",
+                R.drawable.logo_app_blanco,
+                "32" + " likes",
+                "Description...",
+                "12",
+                R.color.black
+            ),
+            Post(
+                "photo",
+                "Adam",
+                "Barcelona",
+                R.drawable.logo_app_negro,
+                "345",
+                "Description...",
+                "100",
+                R.color.white
+            ),
+            Post(
+                "photo",
+                "AlejandroG",
+                "Terrassa",
+                R.drawable.logo_app_blanco,
+                "1000",
+                "Description...",
+                "32",
+                R.color.black
             )
+
         )
 
-        binding.searchRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.searchRecyclerView.adapter = FeedAdapter(data)
+        binding.searchRecyclerView.layoutManager = GridLayoutManager(context,3)
+        binding.searchRecyclerView.adapter = SearchAdapter(data)
 
     }
 
