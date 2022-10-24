@@ -1,11 +1,10 @@
 package com.example.gymbro.ui.search.adapter
 
-import android.service.autofill.Dataset
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.content.ContextCompat
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
@@ -28,8 +27,9 @@ class SearchAdapter(private val dataSet: Array<Post>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
 
-        viewHolder.colorPhotoImageView.setImageResource(dataSet[position].postPhoto)
-        viewHolder.colorPhotoImageView.setBackgroundColor(dataSet[position].photoBackground)
+        viewHolder.photoPostImageView.setImageResource(dataSet[position].postPhoto)
+        viewHolder.photoPostImageView.setBackgroundColor(dataSet[position].photoBackground)
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -40,12 +40,11 @@ class SearchAdapter(private val dataSet: Array<Post>) :
      * (custom ViewHolder).
      */
     class SearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        val colorPhotoImageView: ImageView
+        val photoPostImageView: ImageView
 
         init {
             // Define click listener for the ViewHolder's View.
-            colorPhotoImageView = view.findViewById(R.id.photoPostImageView)
+            photoPostImageView = view.findViewById(R.id.photoPostImageView)
 
         }
     }

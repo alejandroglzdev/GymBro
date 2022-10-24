@@ -6,17 +6,49 @@ import android.os.Bundle
 import android.text.TextUtils.replace
 import android.util.Log
 import com.example.gymbro.R
+import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
+import com.example.gymbro.ui.search.fragment.SearchFragment
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        getSupportFragmentManager()
+        supportFragmentManager
             .beginTransaction()
-            .add(R.id.fragmentContainer, FeedFragment()).commit()
+            .add(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
 
         Log.d(TAG, "MainActivity:onCreate: ")
+
+        configureUI()
+    }
+
+    private fun configureUI() {
+        binding.homeImageView.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
+
+            Log.d(TAG, "MainActivity:onCreate: ")
+        }
+
+        binding.dietImageView.setOnClickListener { }
+
+        binding.searchImageView.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragmentContainer, SearchFragment.newInstance("","")).commit()
+
+            Log.d(TAG, "MainActivity:onCreate: ")
+        }
+
+        binding.trainingImageView.setOnClickListener { }
+
+        binding.profileImageView.setOnClickListener { }
+
     }
 }
