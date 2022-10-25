@@ -24,7 +24,7 @@ class CreateNewPasswordActivity : AppCompatActivity() {
         }
 
         binding.arrowBackImageView.setOnClickListener {
-            val intent = Intent(this, EnterCodeActivity::class.java)
+            val intent = Intent(this, VerificationActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
