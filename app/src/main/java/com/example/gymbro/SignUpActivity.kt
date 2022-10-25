@@ -84,8 +84,6 @@ class SignUpActivity : AppCompatActivity() {
                         //agregamos la demás info dentro de la base de datos del usuario con userid
                         database.child("users").child(user.uid).child("username").setValue(username)
                         database.child("users").child(user.uid).child("phone").setValue(phone)
-                        database.child("users").child(user.uid).child("verification")
-                            .setValue("false")
 
                         //redirigimos al usuario a la vista de verificacion
                         updateUserInfoAndGoSignIn()
