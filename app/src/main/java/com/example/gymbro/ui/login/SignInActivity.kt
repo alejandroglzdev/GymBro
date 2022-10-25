@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.gymbro.databinding.ActivitySignInBinding
 import com.example.gymbro.databinding.ActivitySignUpBinding
+import com.example.gymbro.ui.main.MainActivity
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -73,7 +74,6 @@ class SignInActivity : AppCompatActivity() {
 
                 }
         }
-
 
 
     }

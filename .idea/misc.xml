@@ -10,11 +10,13 @@
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/drawable/splash_background.xml" value="0.2295" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/drawable/splash_gradient.xml" value="0.2295" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/drawable/splash_screen.xml" value="0.113" />
+        <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_create_new_password.xml" value="0.25025641025641027" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_enter_code.xml" value="0.25416666666666665" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_reset_password.xml" value="0.25025641025641027" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/activity_verification.xml" value="0.1" />
         <entry key="..\:/Proyectos/gymbro/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
       </map>
     </option>
