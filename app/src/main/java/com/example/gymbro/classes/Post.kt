@@ -2,7 +2,7 @@ package com.example.gymbro.classes
 
 import android.graphics.drawable.Drawable
 
-class Post(
+data class Post(
     var profilePhoto: String?,
     var username: String?,
     var location: String?,
