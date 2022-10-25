@@ -1,10 +1,13 @@
-package com.example.gymbro
+package com.example.gymbro.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gymbro.ui.feed.activity.FeedActivity
+import com.example.gymbro.ui.resetPassword.ResetPasswordActivity
+import com.example.gymbro.ui.register.SignUpActivity
 import com.example.gymbro.databinding.ActivitySignInBinding
-import com.example.gymbro.databinding.ActivitySignUpBinding
+import com.example.gymbro.ui.main.MainActivity
 
 class SignInActivity : AppCompatActivity() {
 
@@ -25,7 +28,7 @@ class SignInActivity : AppCompatActivity() {
         }
 
         binding.loginButtonSignIn.setOnClickListener {
-            val intent = Intent(this,FeedActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

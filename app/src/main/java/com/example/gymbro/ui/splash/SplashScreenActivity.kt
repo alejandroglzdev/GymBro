@@ -1,9 +1,11 @@
-package com.example.gymbro
+package com.example.gymbro.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.gymbro.R
+import com.example.gymbro.ui.login.SignInActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
