@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/azul_oscuro"
     android:orientation="vertical"
-    tools:context=".ui.feed.activity.FeedActivity">
+    tools:context=".ui.main.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

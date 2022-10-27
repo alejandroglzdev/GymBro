@@ -1,4 +1,4 @@
-package com.example.gymbro.ui.workout
+package com.example.gymbro.ui.workout.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
