@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.gymbro.databinding.ActivitySignUpBinding
+import com.example.gymbro.ui.register.VerifyActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -86,7 +87,7 @@ class SignUpActivity : AppCompatActivity() {
                         database.child("users").child(user.uid).child("phone").setValue(phone)
 
                         //redirigimos al usuario a la vista de verificacion
-                        updateUserInfoAndGoSignIn()
+                        updateUserInfoAndGoSignIn(email, password1)
                     } else {
                         //si el registro falla entra aqui
                         Toast.makeText(this, "Error durante el registro", Toast.LENGTH_SHORT).show()
@@ -103,10 +104,12 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
-    private fun updateUserInfoAndGoSignIn() {
+    private fun updateUserInfoAndGoSignIn(email: String, password1: String) {
         sendEmailVerification()
         //vamos a la actividad entercodeactivity
-        val intent = Intent(this, SignInActivity::class.java)
+        val intent = Intent(this, VerifyActivity::class.java)
+        intent.putExtra("email", email)
+        intent.putExtra("password", password1)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
