@@ -10,6 +10,7 @@ import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
 import com.example.gymbro.ui.profile.ProfileFragment
 import com.example.gymbro.ui.search.fragment.SearchFragment
+import com.example.gymbro.ui.workout.fragment.WorkoutMenuFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -48,7 +49,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.trainingImageView.setOnClickListener { }
+        binding.trainingImageView.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, WorkoutMenuFragment.newInstance("", "")).commit()
+
+            Log.d(TAG, "MainActivity:onCreate: ")
+        }
 
         binding.profileImageView.setOnClickListener {
             supportFragmentManager
