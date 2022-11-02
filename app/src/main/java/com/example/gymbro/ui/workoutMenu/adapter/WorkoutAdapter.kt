@@ -1,13 +1,11 @@
-package com.example.gymbro.ui.workout.adapter
+package com.example.gymbro.ui.workoutMenu.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
-import com.example.gymbro.classes.Post
 import com.example.gymbro.classes.WorkoutCard
 
 class WorkoutAdapter(private val dataSet: Array<WorkoutCard>) :

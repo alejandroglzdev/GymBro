@@ -1,4 +1,4 @@
-package com.example.gymbro.ui.workout.fragment
+package com.example.gymbro.ui.workoutMenu.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.classes.WorkoutCard
 import com.example.gymbro.databinding.FragmentWorkoutMenuBinding
-import com.example.gymbro.ui.workout.adapter.WorkoutAdapter
+import com.example.gymbro.ui.workoutMenu.adapter.WorkoutAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

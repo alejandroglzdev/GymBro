@@ -3,14 +3,13 @@ package com.example.gymbro.ui.main
 import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.util.Log
 import com.example.gymbro.R
 import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
 import com.example.gymbro.ui.profile.ProfileFragment
 import com.example.gymbro.ui.search.fragment.SearchFragment
-import com.example.gymbro.ui.workout.fragment.WorkoutMenuFragment
+import com.example.gymbro.ui.workoutMenu.fragment.WorkoutMenuFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

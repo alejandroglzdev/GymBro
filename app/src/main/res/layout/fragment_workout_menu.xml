@@ -21,8 +21,6 @@
             android:textSize="18sp"
             android:textColor="@color/white"/>
 
-
-
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
