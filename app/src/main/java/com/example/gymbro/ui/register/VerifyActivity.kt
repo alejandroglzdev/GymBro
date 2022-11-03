@@ -1,11 +1,15 @@
 package com.example.gymbro.ui.register
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.gymbro.R
+import com.example.gymbro.ResetPasswordActivity
+import com.example.gymbro.SignInActivity
 import com.example.gymbro.databinding.ActivityVerifyBinding
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
@@ -28,15 +32,22 @@ class VerifyActivity : AppCompatActivity() {
         val email = bundle?.getString("email")
         val password = bundle?.getString("password")
 
-        checkIfVerified(email, password)
+        binding.buttonCheck.setOnClickListener(){
+            checkIfVerified(email, password)
+        }
+
+        binding.buttonNext.setOnClickListener(){
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }
 
 
     private fun checkIfVerified(email: String?, password: String?) {
-        var verified = false
-        while (!verified)
+        binding.buttonCheck.isActivated = false
 
             if (email != null) {
                 if (password != null) {
@@ -53,17 +64,19 @@ class VerifyActivity : AppCompatActivity() {
                                     binding.animationViewLoading.setAnimation(R.raw.loadingdone)
                                     binding.animationViewLoading.playAnimation()
                                     binding.animationViewLoading.loop(false)
-                                    verified = true
+                                    binding.buttonCheck.isVisible = false
+                                    binding.buttonNext.isVisible = true
 
                                 } else {
-                                    verified = false
-                                    Toast.makeText(this, "Mail isn't verified", Toast.LENGTH_SHORT)
+                                    Toast.makeText(this, "Mail isn't verified, check your inbox", Toast.LENGTH_SHORT)
                                         .show()
+                                    binding.buttonCheck.isActivated = true
                                 }
 
                             } else {
                                 //si el login falla entra aqui
                                 Toast.makeText(this, "Login error", Toast.LENGTH_SHORT).show()
+                                binding.buttonCheck.isActivated = true
                             }
                         }
                 }
