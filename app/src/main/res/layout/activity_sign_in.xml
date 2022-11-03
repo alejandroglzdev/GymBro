@@ -99,7 +99,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/loginButton_SignIn"
+                android:id="@+id/loginButtonSignIn"
                 style="@style/blueDefaultButton"
                 android:layout_width="200dp"
                 android:layout_height="70dp"
