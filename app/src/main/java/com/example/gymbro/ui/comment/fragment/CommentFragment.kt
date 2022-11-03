@@ -47,6 +47,24 @@ class CommentFragment : Fragment() {
             Comment(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
                 R.drawable.ic_person
+            ),Comment(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
+                R.drawable.ic_person
+            ),Comment(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
+                R.drawable.ic_person
+            ),Comment(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
+                R.drawable.ic_person
+            ),Comment(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
+                R.drawable.ic_person
+            ),Comment(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
+                R.drawable.ic_person
+            ),Comment(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum tempus sodales. In eget laoreet est. Sed interdum dui est, eu tincidunt nisi viverra quis. Cras vel justo eleifend, ullamcorper libero in, accumsan nunc. Fusce pharetra arcu mi, ut pretium magna sagittis sit amet. Etiam pharetra eget turpis eget facilisis. Etiam tincidunt risus nec cursus dictum.",
+                R.drawable.ic_person
             )
         )
 

@@ -24,7 +24,6 @@ private const val ARG_PARAM2 = "param2"
 class FeedFragment : Fragment() {
     private lateinit var binding: FragmentFeedBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
