@@ -3,12 +3,13 @@ package com.example.gymbro.ui.main
 import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.util.Log
 import com.example.gymbro.R
 import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
+import com.example.gymbro.ui.profile.ProfileFragment
 import com.example.gymbro.ui.search.fragment.SearchFragment
+import com.example.gymbro.ui.workoutMenu.fragment.WorkoutMenuFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -39,26 +40,29 @@ class MainActivity : AppCompatActivity() {
         binding.dietImageView.setOnClickListener { }
 
         binding.searchImageView.setOnClickListener {
-
-
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragmentContainer, SearchFragment.newInstance("", "")).commit()
 
                 Log.d(TAG, "MainActivity:onCreate: ")
 
-
-            /*
-            fragmentTransaction.replace(R.id.fragmentContainer, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-
-             */
         }
 
-        binding.trainingImageView.setOnClickListener { }
+        binding.trainingImageView.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, WorkoutMenuFragment.newInstance("", "")).commit()
 
-        binding.profileImageView.setOnClickListener { }
+            Log.d(TAG, "MainActivity:onCreate: ")
+        }
+
+        binding.profileImageView.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, ProfileFragment.newInstance("", "")).commit()
+
+            Log.d(TAG, "MainActivity:onCreate: ")
+        }
 
     }
 }

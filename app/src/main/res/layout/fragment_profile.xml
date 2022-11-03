@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/azul_oscuro"
     android:orientation="vertical"
-    tools:context=".ProfileFragment">
+    tools:context=".ui.main.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:textColor="@color/gris_oscuro"
-            tools:text="user_name" />
+            android:text="user_name" />
 
     </LinearLayout>
 
@@ -34,8 +34,9 @@
             android:layout_weight="25">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_person"/>
 
         </LinearLayout>
 
@@ -50,13 +51,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
-                tools:text="3" />
+                android:text="3" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
-                tools:text="POSTS" />
+                android:text="POSTS" />
 
 
         </LinearLayout>
@@ -72,13 +73,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
-                tools:text="3" />
+                android:text="3" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
-                tools:text="FOLLOWERS" />
+                android:text="FOLLOWERS" />
 
         </LinearLayout>
 
@@ -93,13 +94,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
-                tools:text="3" />
+                android:text="3" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
-                tools:text="FOLLOWED" />
+                android:text="FOLLOWED" />
 
         </LinearLayout>
 
@@ -116,12 +117,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="15">
+            android:layout_weight="20">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginButton_SignIn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="FOLLOW"
                 android:textSize="10sp"
                 app:cornerRadius="30dp"
@@ -132,7 +133,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="55"
+            android:layout_weight="50"
             android:orientation="vertical">
 
             <TextView
@@ -140,47 +141,45 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
                 android:layout_marginTop="10dp"
-                tools:text="Name and surname" />
+                android:text="Name and surname" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/gris_oscuro"
-                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus et leo non volutpat. Suspendisse aliquam, nisi eget sollicitudi" />
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus et leo non volutpat. Suspendisse aliquam, nisi eget sollicitudi" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="30">
+            android:layout_weight="30"
+            android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="33"
                 android:layout_marginRight="15dp"
-                android:text="Diet"
+                android:text="Stats"
                 android:textSize="15sp"
                 app:cornerRadius="30dp"
                 style="@style/blueDefaultButton"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="33"
                 android:text="Calendar"
                 android:textSize="15sp"
                 app:cornerRadius="30dp"
                 style="@style/blueDefaultButton"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="33"
                 android:layout_marginLeft="15dp"
-                android:text="Workout"
+                android:text="Measures"
                 android:textSize="15sp"
                 app:cornerRadius="30dp"
                 style="@style/blueDefaultButton"/>
@@ -195,6 +194,7 @@
         android:layout_weight="45">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profileRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
