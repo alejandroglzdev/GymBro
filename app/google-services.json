@@ -7,36 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:531378913101:android:7489ecb42b3c050d30c104",
-        "android_client_info": {
-          "package_name": "com.application.gymbro"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "531378913101-to0e71bnd6t5ul3b39bkj32u4j7v1pgu.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCbY3A4EzohyeznCsE1hRNHyswRKXX-qlE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "531378913101-to0e71bnd6t5ul3b39bkj32u4j7v1pgu.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:531378913101:android:efcf71232e6a2a7530c104",
+        "mobilesdk_app_id": "1:531378913101:android:34e314297c08002e30c104",
         "android_client_info": {
           "package_name": "com.example.gymbro"
         }
