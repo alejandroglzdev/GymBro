@@ -36,7 +36,9 @@ class SignInActivity : AppCompatActivity() {
         }
 
         binding.loginButtonSignIn.setOnClickListener {
-            logInUser()
+            //logInUser() //desactivado para entrar sin logear
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         binding.signUpTextButton.setOnClickListener {

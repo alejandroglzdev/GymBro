@@ -1,9 +1,11 @@
 package com.example.gymbro.ui.profile
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.gymbro.R
@@ -56,12 +58,25 @@ class ProfileFragment : Fragment() {
         popup.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId){
                 R.id.about_menu-> {
-
+                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
+                        .setTitle("Gymbro App" + " Development phase")
+                        .setMessage("Made with <3 by Alejandro Espejo & Adrià Fernández")
+                        .setPositiveButton("I don't care") { _, _ ->
+                        }
+                        .show()
                 }
                 R.id.signout_menu-> {
-                    FirebaseAuth.getInstance().signOut()
-                    val intent = Intent(context, SignInActivity::class.java)
-                    startActivity(intent)
+                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
+                        .setMessage("You're about to sign out, you will need to log in again later.")
+                        .setPositiveButton("Proceed") { _, _ ->
+
+                            FirebaseAuth.getInstance().signOut()
+                            val intent = Intent(context, SignInActivity::class.java)
+                            startActivity(intent)
+                        }
+                        .setNegativeButton("Cancel") { _, _ -> }
+                        .show()
+
                 }
             }
             true
