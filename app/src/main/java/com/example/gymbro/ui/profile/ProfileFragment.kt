@@ -1,16 +1,19 @@
 package com.example.gymbro.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.*
+import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.gymbro.R
+import com.example.gymbro.SignInActivity
+import com.example.gymbro.SignUpActivity
 import com.example.gymbro.classes.Post
 import com.example.gymbro.databinding.FragmentProfileBinding
 import com.example.gymbro.databinding.FragmentSearchBinding
 import com.example.gymbro.ui.search.adapter.SearchAdapter
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,11 +38,58 @@ class ProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(layoutInflater)
+
+        setHasOptionsMenu(true)
+
+        binding.menuImageView.setOnClickListener(){
+            showPopup(binding.menuImageView)
+        }
+
+
         return binding.root
+    }
+
+    fun showPopup(v : View){
+        val popup = PopupMenu(context, v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.profile_menu, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.about_menu-> {
+
+                }
+                R.id.signout_menu-> {
+                    FirebaseAuth.getInstance().signOut()
+                    val intent = Intent(context, SignInActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+        popup.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.profile_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.about_menu -> {
+
+            }
+
+            R.id.signout_menu -> {
+
+            }
+        }
+        return true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         val data = arrayOf(
             Post(

@@ -41,13 +41,16 @@ class VerifyActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.textViewResend.setOnClickListener(){
+            Toast.makeText(this, "Mail sent, check your spam inbox", Toast.LENGTH_SHORT).show()
+        }
+
 
 
     }
 
 
     private fun checkIfVerified(email: String?, password: String?) {
-        binding.buttonCheck.isActivated = false
 
             if (email != null) {
                 if (password != null) {
