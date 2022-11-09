@@ -31,7 +31,7 @@
 
     </style>
     <style name="MyTitleTextStyle">
-        <item name="android:textColor">#FFEB3B</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
     </style>
     <style name="MyPositiveTextStyle" parent="Widget.MaterialComponents.Button.TextButton">
