@@ -2,6 +2,7 @@ package com.example.gymbro.ui.profile
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import android.widget.PopupMenu
@@ -52,6 +53,7 @@ class ProfileFragment : Fragment() {
     }
 
     fun showPopup(v : View){
+        val url = "https://git.copernic.cat/gonzalez.espejo.alejandro/gymbro.git"
         val popup = PopupMenu(context, v)
         val inflater: MenuInflater = popup.menuInflater
         inflater.inflate(R.menu.profile_menu, popup.menu)
@@ -60,9 +62,11 @@ class ProfileFragment : Fragment() {
                 R.id.about_menu-> {
                     AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
                         .setTitle("Gymbro App" + " Development phase")
-                        .setMessage("Made with <3 by Alejandro Espejo & Adrià Fernández")
-                        .setPositiveButton("I don't care") { _, _ ->
+                        .setMessage("OpenSource project made with <3 by Alejandro Espejo & Adrià Fernández")
+                        .setPositiveButton("Check github") { _, _ ->
+                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                         }
+                        .setNegativeButton("Ok, bye") {_, _ ->}
                         .show()
                 }
                 R.id.signout_menu-> {
