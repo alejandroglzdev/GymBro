@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
@@ -80,7 +81,10 @@ class FeedFragment : Fragment() {
         )
 
         binding.feedRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.feedRecyclerView.adapter = FeedAdapter(data)
+        binding.feedRecyclerView.adapter = FeedAdapter(data, callback = {
+            user ->
+            Toast.makeText(requireContext(), "ff", Toast.LENGTH_SHORT).show()
+        })
 
     }
 

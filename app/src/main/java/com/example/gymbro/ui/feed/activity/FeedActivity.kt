@@ -2,6 +2,7 @@ package com.example.gymbro.ui.feed.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
@@ -22,6 +23,7 @@ class FeedActivity : AppCompatActivity() {
         configureUI()
     }
 
+
     private fun configureUI() {
         // Esto devuelve un Drawable? asociado al ID que se le pase por parametro
         // ResourcesCompat.getDrawable(resources, R.color.white, null)
@@ -32,7 +34,9 @@ class FeedActivity : AppCompatActivity() {
             Post("photo", "AlejandroG", "Terrassa", R.drawable.logo_app_blanco, "1000", "Description...","32", R.color.black)
         )
         binding.feedRecyclerView.layoutManager = linearLayoutManager
-        binding.feedRecyclerView.adapter = FeedAdapter(data)
+      //  binding.feedRecyclerView.adapter = FeedAdapter(data, callback = { user ->
+     //       Toast.makeText(this,"efefefe", Toast.LENGTH_SHORT).show()
+   //     })
     }
 
 }
