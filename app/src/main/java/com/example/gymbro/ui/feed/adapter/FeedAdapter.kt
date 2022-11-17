@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
 
-class FeedAdapter(private val dataSet: Array<Post>,
-val callback: (Post) -> Unit) :
+class FeedAdapter(
+    private val dataSet: Array<Post>,
+    val callback: (Post) -> Unit
+) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
 
     // Create new views (invoked by the layout manager)
@@ -31,8 +33,10 @@ val callback: (Post) -> Unit) :
         viewHolder.usernameTextView.text = dataSet[position].username
         viewHolder.usernameLocation.text = dataSet[position].location
         viewHolder.likes.text = dataSet[position].numberOfLikes + " likes"
-        viewHolder.usernameAndDescription.text = dataSet[position].username + " | " + dataSet[position].description
-        viewHolder.numberOfComments.text = "Show " + dataSet[position].numberOfComments + " comments"
+        viewHolder.usernameAndDescription.text =
+            dataSet[position].username + " | " + dataSet[position].description
+        viewHolder.numberOfComments.text =
+            "Show " + dataSet[position].numberOfComments + " comments"
 
     }
 
@@ -46,14 +50,28 @@ val callback: (Post) -> Unit) :
     class FeedViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val usernameTextView: TextView
         val usernameLocation: TextView
-        val likes : TextView
+        val likes: TextView
         val usernameAndDescription: TextView
         val numberOfComments: TextView
         val commentImageView: ImageView
+        val likeImageView: ImageView
+        var favButtonStatus = false
 
-        fun bindData(user: Post, callback: (Post) -> Unit){
-            commentImageView.setOnClickListener{
+        fun bindData(user: Post, callback: (Post) -> Unit) {
+            commentImageView.setOnClickListener {
                 callback(user)
+            }
+
+            likeImageView.setOnClickListener {
+                if (favButtonStatus){
+                    likeImageView.setImageResource(R.drawable.ic_favorite_off)
+                    favButtonStatus = false
+
+                }else{
+                    likeImageView.setImageResource(R.drawable.ic_favorite_on)
+                    favButtonStatus = true
+                }
+
             }
         }
 
@@ -65,10 +83,13 @@ val callback: (Post) -> Unit) :
             usernameAndDescription = view.findViewById(R.id.userNameAndDescriptionTextView)
             numberOfComments = view.findViewById(R.id.numberOfComments)
             commentImageView = view.findViewById(R.id.commentImageView)
+            likeImageView = view.findViewById(R.id.likeImageView)
 
 
         }
 
+
     }
+
 
 }
