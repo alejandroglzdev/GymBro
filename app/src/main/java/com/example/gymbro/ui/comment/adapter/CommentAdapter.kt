@@ -44,11 +44,14 @@ class CommentAdapter(private val dataSet: Array<Comment>) :
         val profilePhotoImageView: ImageView
         val commentTextView: TextView
 
+
         init {
             // Define click listener for the ViewHolder's View.
             profilePhotoImageView = view.findViewById(R.id.profilePhotoImageView)
             commentTextView = view.findViewById(R.id.commentTextView)
-
         }
+
+
+
     }
 }
