@@ -1,13 +1,19 @@
 package com.example.gymbro.ui.feed.adapter
 
+import android.content.ContentValues
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
+import com.example.gymbro.ui.comment.fragment.CommentFragment
+import com.example.gymbro.ui.feed.fragment.FeedFragment
+import com.example.gymbro.ui.main.MainActivity
 
 class FeedAdapter(
     private val dataSet: Array<Post>,
@@ -59,15 +65,19 @@ class FeedAdapter(
 
         fun bindData(user: Post, callback: (Post) -> Unit) {
             commentImageView.setOnClickListener {
-                callback(user)
+                val activity = it.context as MainActivity
+                activity.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragmentContainer, CommentFragment.newInstance("", ""))
+                    .commitNow()
             }
 
             likeImageView.setOnClickListener {
-                if (favButtonStatus){
+                if (favButtonStatus) {
                     likeImageView.setImageResource(R.drawable.ic_favorite_off)
                     favButtonStatus = false
 
-                }else{
+                } else {
                     likeImageView.setImageResource(R.drawable.ic_favorite_on)
                     favButtonStatus = true
                 }
