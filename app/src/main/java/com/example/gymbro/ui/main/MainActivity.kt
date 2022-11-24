@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.findNavController
 import com.example.gymbro.R
 import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
