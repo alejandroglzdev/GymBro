@@ -81,10 +81,7 @@ class FeedFragment : Fragment() {
         )
 
         binding.feedRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.feedRecyclerView.adapter = FeedAdapter(this,data, callback = {
-            user ->
-            Toast.makeText(requireContext(), "${user.username}", Toast.LENGTH_SHORT).show()
-        })
+        binding.feedRecyclerView.adapter = FeedAdapter(this,data)
 
 
 
