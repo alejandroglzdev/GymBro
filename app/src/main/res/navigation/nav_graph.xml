@@ -3,70 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/workoutInProgressFragment">
+    app:startDestination="@id/feedFragment"
+    >
 
-    <fragment
-        android:id="@+id/workoutInProgressFragment"
-        android:name="com.example.gymbro.ui.workoutInProgress.WorkoutInProgressFragment"
-        android:label="fragment_workout_in_progress"
-        tools:layout="@layout/fragment_workout_in_progress" />
     <fragment
         android:id="@+id/commentFragment"
         android:name="com.example.gymbro.ui.comment.fragment.CommentFragment"
-        android:label="CommentFragment" />
+        android:label="CommentFragment" >
+    </fragment>
     <fragment
         android:id="@+id/feedFragment"
         android:name="com.example.gymbro.ui.feed.fragment.FeedFragment"
         android:label="FeedFragment" >
         <action
-            android:id="@+id/action_feedFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_feedFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.gymbro.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" >
-        <action
-            android:id="@+id/action_profileFragment_to_workoutMenuFragment"
-            app:destination="@id/workoutMenuFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.gymbro.ui.search.fragment.SearchFragment"
-        android:label="SearchFragment" >
-        <action
-            android:id="@+id/action_searchFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/workoutMenuFragment"
-        android:name="com.example.gymbro.ui.workoutMenu.fragment.WorkoutMenuFragment"
-        android:label="WorkoutMenuFragment" >
-        <action
-            android:id="@+id/action_workoutMenuFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_workoutMenuFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
-        <action
-            android:id="@+id/action_workoutMenuFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/dietFragment"
-        android:name="com.example.gymbro.ui.diet.DietFragment"
-        android:label="fragment_diet"
-        tools:layout="@layout/fragment_diet" />
+            android:id="@+id/action_feedFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
 </navigation>

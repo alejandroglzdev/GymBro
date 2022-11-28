@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.classes.Comment
@@ -37,6 +38,12 @@ class CommentFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentCommentBinding.inflate(layoutInflater)
+        // Use the Kotlin extension in the fragment-ktx artifact
+        setFragmentResultListener("requestKey") { requestKey, bundle ->
+            // We use a String here, but any type that can be put in a Bundle is supported
+            val result = bundle.getString("bundleKey")
+            // Do something with the result
+        }
         return binding.root
     }
 
@@ -70,6 +77,7 @@ class CommentFragment : Fragment() {
 
         binding.commentRecyclerView.adapter = CommentAdapter(data)
         binding.commentRecyclerView.layoutManager = LinearLayoutManager(activity)
+
     }
 
     companion object {

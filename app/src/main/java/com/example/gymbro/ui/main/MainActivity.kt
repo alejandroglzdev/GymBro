@@ -4,6 +4,9 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.gymbro.R
 import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
@@ -19,22 +22,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        navController.navigate(R.id.action_global_feedFragment)
 
         Log.d(TAG, "MainActivity:onCreate: ")
 
-        configureUI()
+        configureUI(navController)
     }
 
-    private fun configureUI() {
+    private fun configureUI(navController: NavController) {
         binding.homeImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, FeedFragment()).commit()
 
-            Log.d(TAG, "MainActivity:onCreate: ")
+            navController.navigate(R.id.nav_graph)
         }
 
         binding.dietImageView.setOnClickListener { }
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.searchImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, SearchFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, SearchFragment.newInstance("", "")).commit()
 
                 Log.d(TAG, "MainActivity:onCreate: ")
 
@@ -51,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         binding.trainingImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, WorkoutMenuFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, WorkoutMenuFragment.newInstance("", "")).commit()
 
             Log.d(TAG, "MainActivity:onCreate: ")
         }
@@ -59,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding.profileImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, ProfileFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, ProfileFragment.newInstance("", "")).commit()
 
             Log.d(TAG, "MainActivity:onCreate: ")
         }

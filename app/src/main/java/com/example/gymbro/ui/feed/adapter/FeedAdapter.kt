@@ -1,16 +1,26 @@
 package com.example.gymbro.ui.feed.adapter
 
+import android.app.Activity
+import android.content.ContentValues
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.gymbro.ui.feed.fragment.FeedFragment
 
-class FeedAdapter(private val dataSet: Array<Post>,
-val callback: (Post) -> Unit) :
+class FeedAdapter(
+    val frag: FeedFragment,
+    private val dataSet: Array<Post>,
+) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
 
     // Create new views (invoked by the layout manager)
@@ -22,17 +32,40 @@ val callback: (Post) -> Unit) :
         return FeedViewHolder(view)
     }
 
+
     // Replace the contents of a view (invoked by the layout manager)
+
     override fun onBindViewHolder(viewHolder: FeedViewHolder, position: Int) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.bindData(user = dataSet[position], callback = callback)
 
         viewHolder.usernameTextView.text = dataSet[position].username
         viewHolder.usernameLocation.text = dataSet[position].location
         viewHolder.likes.text = dataSet[position].numberOfLikes + " likes"
         viewHolder.usernameAndDescription.text = dataSet[position].username + " | " + dataSet[position].description
         viewHolder.numberOfComments.text = "Show " + dataSet[position].numberOfComments + " comments"
+
+        var favButtonStatus = false
+
+
+        viewHolder.commentImageView.setOnClickListener {
+            //Toast.makeText(frag.activity,"sadasdas",Toast.LENGTH_SHORT).show()
+
+
+            findNavController(frag).navigate(R.id.action_feedFragment_to_commentFragment)
+        }
+        
+        viewHolder.likeImageView.setOnClickListener {
+            if (favButtonStatus) {
+                viewHolder.likeImageView.setImageResource(R.drawable.ic_favorite_off)
+                favButtonStatus = false
+
+            } else {
+                viewHolder.likeImageView.setImageResource(R.drawable.ic_favorite_on)
+                favButtonStatus = true
+            }
+
+        }
 
     }
 
@@ -46,16 +79,11 @@ val callback: (Post) -> Unit) :
     class FeedViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val usernameTextView: TextView
         val usernameLocation: TextView
-        val likes : TextView
+        val likes: TextView
         val usernameAndDescription: TextView
         val numberOfComments: TextView
         val commentImageView: ImageView
-
-        fun bindData(user: Post, callback: (Post) -> Unit){
-            commentImageView.setOnClickListener{
-                callback(user)
-            }
-        }
+        val likeImageView: ImageView
 
         init {
             // Define click listener for the ViewHolder's View.
@@ -65,9 +93,11 @@ val callback: (Post) -> Unit) :
             usernameAndDescription = view.findViewById(R.id.userNameAndDescriptionTextView)
             numberOfComments = view.findViewById(R.id.numberOfComments)
             commentImageView = view.findViewById(R.id.commentImageView)
+            likeImageView = view.findViewById(R.id.likeImageView)
 
 
         }
+
 
     }
 

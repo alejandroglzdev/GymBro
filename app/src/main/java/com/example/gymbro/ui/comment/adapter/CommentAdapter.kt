@@ -17,7 +17,7 @@ class CommentAdapter(private val dataSet: Array<Comment>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): SearchViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.adapter_workout_item, viewGroup, false)
+            .inflate(R.layout.adapter_comment_item, viewGroup, false)
 
         return SearchViewHolder(view)
     }
