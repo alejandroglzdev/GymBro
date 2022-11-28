@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.homeImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, FeedFragment()).commit()
+                .replace(R.id.nav_host_fragment, FeedFragment()).commit()
 
             navController.navigate(R.id.nav_graph)
         }
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.searchImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, SearchFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, SearchFragment.newInstance("", "")).commit()
 
                 Log.d(TAG, "MainActivity:onCreate: ")
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         binding.trainingImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, WorkoutMenuFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, WorkoutMenuFragment.newInstance("", "")).commit()
 
             Log.d(TAG, "MainActivity:onCreate: ")
         }
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding.profileImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, ProfileFragment.newInstance("", "")).commit()
+                .replace(R.id.nav_host_fragment, ProfileFragment.newInstance("", "")).commit()
 
             Log.d(TAG, "MainActivity:onCreate: ")
         }
