@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.gymbro.R
@@ -23,23 +24,20 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
+        navController.navigate(R.id.action_global_feedFragment)
 
         Log.d(TAG, "MainActivity:onCreate: ")
 
-        configureUI()
+        configureUI(navController)
     }
 
-    private fun configureUI() {
+    private fun configureUI(navController: NavController) {
         binding.homeImageView.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, FeedFragment.newInstance("", "")).commit()
+                .replace(R.id.fragmentContainer, FeedFragment()).commit()
 
-            Log.d(TAG, "MainActivity:onCreate: ")
+            navController.navigate(R.id.nav_graph)
         }
 
         binding.dietImageView.setOnClickListener { }

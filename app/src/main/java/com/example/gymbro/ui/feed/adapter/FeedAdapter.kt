@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
 import com.example.gymbro.classes.Post
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.gymbro.ui.feed.fragment.FeedFragment
 
 class FeedAdapter(
-    val frag: Fragment,
+    val frag: FeedFragment,
     private val dataSet: Array<Post>,
 ) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
@@ -48,12 +50,11 @@ class FeedAdapter(
 
         viewHolder.commentImageView.setOnClickListener {
             //Toast.makeText(frag.activity,"sadasdas",Toast.LENGTH_SHORT).show()
+
+
             findNavController(frag).navigate(R.id.action_feedFragment_to_commentFragment)
-
         }
-
-
-
+        
         viewHolder.likeImageView.setOnClickListener {
             if (favButtonStatus) {
                 viewHolder.likeImageView.setImageResource(R.drawable.ic_favorite_off)
