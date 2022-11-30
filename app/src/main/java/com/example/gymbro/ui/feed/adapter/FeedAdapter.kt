@@ -16,6 +16,7 @@ import com.example.gymbro.classes.Post
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.gymbro.ui.feed.fragment.FeedFragment
+import com.example.gymbro.ui.feed.fragment.FeedFragmentDirections
 
 class FeedAdapter(
     val frag: FeedFragment,
@@ -49,10 +50,10 @@ class FeedAdapter(
 
 
         viewHolder.commentImageView.setOnClickListener {
-            //Toast.makeText(frag.activity,"sadasdas",Toast.LENGTH_SHORT).show()
-
-
-            findNavController(frag).navigate(R.id.action_feedFragment_to_commentFragment)
+            val safeArgsString = "Hello world!"
+            val directions = FeedFragmentDirections.actionFeedFragmentToCommentFragment(safeArgsString)
+            findNavController(frag).navigate(directions)
+            //findNavController(frag).navigate(R.id.action_feedFragment_to_commentFragment)
         }
         
         viewHolder.likeImageView.setOnClickListener {

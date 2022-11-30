@@ -1,10 +1,12 @@
 package com.example.gymbro.ui.comment.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
@@ -44,11 +46,22 @@ class CommentFragment : Fragment() {
             val result = bundle.getString("bundleKey")
             // Do something with the result
         }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val bundle = arguments
+
+        if (bundle == null){
+            Log.d("ads","ads")
+            return
+        }
+        val args = CommentFragmentArgs.fromBundle(bundle)
+
+        Toast.makeText(context, args.example,Toast.LENGTH_SHORT).show()
 
         val data = arrayOf(
             Comment(

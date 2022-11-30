@@ -10,6 +10,11 @@
         android:id="@+id/commentFragment"
         android:name="com.example.gymbro.ui.comment.fragment.CommentFragment"
         android:label="CommentFragment" >
+        <argument
+            android:name="example"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/feedFragment"
@@ -17,6 +22,12 @@
         android:label="FeedFragment" >
         <action
             android:id="@+id/action_feedFragment_to_commentFragment"
-            app:destination="@id/commentFragment" />
+            app:destination="@id/commentFragment">
+            <argument
+                android:name="example"
+                app:argType="string"
+                app:nullable="true"
+                android:defaultValue="@null" />
+        </action>
     </fragment><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
 </navigation>
