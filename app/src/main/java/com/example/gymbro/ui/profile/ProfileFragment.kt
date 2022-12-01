@@ -1,9 +1,11 @@
 package com.example.gymbro.ui.profile
 
 import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.PopupMenu
 import android.widget.Toast
@@ -13,10 +15,14 @@ import com.example.gymbro.R
 import com.example.gymbro.SignInActivity
 import com.example.gymbro.SignUpActivity
 import com.example.gymbro.classes.Post
+import com.example.gymbro.classes.User
 import com.example.gymbro.databinding.FragmentProfileBinding
 import com.example.gymbro.databinding.FragmentSearchBinding
 import com.example.gymbro.ui.search.adapter.SearchAdapter
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +38,8 @@ class ProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    val db = Firebase.firestore
+    val firebaseAuth = FirebaseAuth.getInstance()
 
     private lateinit var binding: FragmentProfileBinding
 
@@ -44,12 +52,24 @@ class ProfileFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
+        configureUI()
+
+        return binding.root
+    }
+
+    private fun configureUI(){
+        val docRef = db.collection("users").document(firebaseAuth.currentUser!!.uid)
+        docRef.get().addOnSuccessListener { documentSnapshot ->
+            val user = documentSnapshot.toObject<User>()
+            if (user != null) {
+                binding.userNameTextView.text = user.username
+            }
+        }
+
         binding.menuImageView.setOnClickListener(){
             showPopup(binding.menuImageView)
         }
 
-
-        return binding.root
     }
 
     fun showPopup(v : View){
