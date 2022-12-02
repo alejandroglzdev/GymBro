@@ -51,38 +51,6 @@ class EditProfileFragment : Fragment() {
     private fun saveData() {
         binding.saveButton.setOnClickListener {
 
-            /*
-            val docRef = db.collection("users").document(firebaseAuth.currentUser!!.uid)
-            docRef.get().addOnSuccessListener { documentSnapshot ->
-                val user = documentSnapshot.toObject<User>()
-
-                val userFirestore = hashMapOf(
-                    "username" to user!!.username,
-                    "phone" to user.phone,
-                    "email" to user.email,
-                    "name" to binding.nameEditText.text.toString(),
-                    "surnames" to binding.surnamesEditText.text.toString(),
-                    "description" to binding.descriptionEditText.text.toString(),
-                    "birthDate" to binding.birthdateEditText.text.toString(),
-                    "gender" to binding.genderEditText.text.toString()
-                )
-
-                db.collection("users")
-                    .document(firebaseAuth.currentUser!!.uid)
-                    .set(userFirestore)
-                    .addOnSuccessListener { documentReference ->
-                        Log.d(
-                            ContentValues.TAG,
-                            "DocumentSnapshot added with ID: ${documentReference}"
-                        )
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w(ContentValues.TAG, "Error adding document", e)
-                    }
-
-
-            }
-            */
             db.collection("users")
                 .document(firebaseAuth.currentUser!!.uid)
                 .update(mapOf(
