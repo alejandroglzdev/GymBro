@@ -1,8 +1,10 @@
 package com.example.gymbro
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.gymbro.databinding.ActivitySignUpBinding
 import com.example.gymbro.ui.register.VerifyActivity
@@ -10,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
@@ -19,7 +22,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     val firebaseAuth = FirebaseAuth.getInstance()
-
+    val db = Firebase.firestore
     val firebaseUser = firebaseAuth.currentUser
 
 
@@ -85,6 +88,30 @@ class SignUpActivity : AppCompatActivity() {
                         //agregamos la demás info dentro de la base de datos del usuario con userid
                         database.child("users").child(user.uid).child("username").setValue(username)
                         database.child("users").child(user.uid).child("phone").setValue(phone)
+
+                        //agregamos los users al firestore
+                        val userFirestore = hashMapOf(
+                            "username" to username,
+                            "phone" to phone,
+                            "email" to email,
+                            "name" to null,
+                            "surnames" to null,
+                            "photoURL" to null,
+                            "description" to null,
+                            "birthDate" to null,
+                            "gender" to null
+                        )
+
+                        db.collection("users")
+                            .document(firebaseAuth.currentUser!!.uid)
+                            .set(userFirestore)
+                            .addOnSuccessListener { documentReference ->
+                                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference}")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.w(TAG, "Error adding document", e)
+                            }
+
 
                         //redirigimos al usuario a la vista de verificacion
                         updateUserInfoAndGoSignIn(email, password1)

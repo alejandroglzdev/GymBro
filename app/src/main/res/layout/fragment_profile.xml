@@ -21,7 +21,7 @@
 
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/userNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -165,6 +165,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/nameSurnameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gris_oscuro"
@@ -172,6 +173,7 @@
                 android:text="Name and surname" />
 
             <TextView
+                android:id="@+id/descriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

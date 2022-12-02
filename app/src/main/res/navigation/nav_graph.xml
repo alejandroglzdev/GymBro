@@ -30,4 +30,30 @@
                 android:defaultValue="@null" />
         </action>
     </fragment><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.gymbro.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.gymbro.ui.editProfile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
+    <fragment
+        android:id="@+id/workoutMenuFragment"
+        android:name="com.example.gymbro.ui.workoutMenu.fragment.WorkoutMenuFragment"
+        android:label="WorkoutMenuFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.gymbro.ui.search.fragment.SearchFragment"
+        android:label="SearchFragment" /><action android:id="@+id/action_global_workoutMenuFragment" app:destination="@id/workoutMenuFragment"/><action android:id="@+id/action_global_searchFragment" app:destination="@id/searchFragment"/>
 </navigation>
