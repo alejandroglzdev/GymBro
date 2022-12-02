@@ -33,38 +33,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun configureUI(navController: NavController) {
         binding.homeImageView.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, FeedFragment()).commit()
+            navController.navigate(R.id.action_global_feedFragment)
 
-            navController.navigate(R.id.nav_graph)
         }
 
         binding.dietImageView.setOnClickListener { }
 
         binding.searchImageView.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, SearchFragment.newInstance("", "")).commit()
-
-                Log.d(TAG, "MainActivity:onCreate: ")
+            navController.navigate(R.id.action_global_searchFragment)
 
         }
 
         binding.trainingImageView.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, WorkoutMenuFragment.newInstance("", "")).commit()
+            navController.navigate(R.id.action_global_workoutMenuFragment)
 
-            Log.d(TAG, "MainActivity:onCreate: ")
         }
 
         binding.profileImageView.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, ProfileFragment.newInstance("", "")).commit()
+            navController.navigate(R.id.action_global_profileFragment)
 
-            Log.d(TAG, "MainActivity:onCreate: ")
         }
 
     }

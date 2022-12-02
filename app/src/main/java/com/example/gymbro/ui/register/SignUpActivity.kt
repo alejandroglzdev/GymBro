@@ -93,7 +93,13 @@ class SignUpActivity : AppCompatActivity() {
                         val userFirestore = hashMapOf(
                             "username" to username,
                             "phone" to phone,
-                            "email" to email
+                            "email" to email,
+                            "name" to null,
+                            "surnames" to null,
+                            "photoURL" to null,
+                            "description" to null,
+                            "birthDate" to null,
+                            "gender" to null
                         )
 
                         db.collection("users")

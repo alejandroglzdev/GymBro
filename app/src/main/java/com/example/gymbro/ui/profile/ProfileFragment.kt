@@ -10,6 +10,7 @@ import android.view.*
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.SignInActivity
@@ -52,22 +53,30 @@ class ProfileFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
+        setUI()
         configureUI()
 
         return binding.root
     }
 
     private fun configureUI(){
+
+
+        binding.menuImageView.setOnClickListener(){
+            showPopup(binding.menuImageView)
+        }
+
+    }
+
+    private fun setUI(){
         val docRef = db.collection("users").document(firebaseAuth.currentUser!!.uid)
         docRef.get().addOnSuccessListener { documentSnapshot ->
             val user = documentSnapshot.toObject<User>()
             if (user != null) {
                 binding.userNameTextView.text = user.username
+                binding.nameSurnameTextView.text = user.name + " " + user.surnames
+                binding.descriptionTextView.text = user.description
             }
-        }
-
-        binding.menuImageView.setOnClickListener(){
-            showPopup(binding.menuImageView)
         }
 
     }
@@ -100,6 +109,11 @@ class ProfileFragment : Fragment() {
                         }
                         .setNegativeButton("Cancel") { _, _ -> }
                         .show()
+
+                }
+
+                R.id.editProfile_menu-> {
+                    findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
 
                 }
             }
