@@ -51,6 +51,7 @@ class EditProfileFragment : Fragment() {
     private fun saveData() {
         binding.saveButton.setOnClickListener {
 
+            /*
             val docRef = db.collection("users").document(firebaseAuth.currentUser!!.uid)
             docRef.get().addOnSuccessListener { documentSnapshot ->
                 val user = documentSnapshot.toObject<User>()
@@ -81,6 +82,16 @@ class EditProfileFragment : Fragment() {
 
 
             }
+            */
+            db.collection("users")
+                .document(firebaseAuth.currentUser!!.uid)
+                .update(mapOf(
+                    "name" to binding.nameEditText.text.toString(),
+                    "surnames" to binding.surnamesEditText.text.toString(),
+                    "description" to binding.descriptionEditText.text.toString(),
+                    "birthDate" to binding.birthdateEditText.text.toString(),
+                    "gender" to binding.genderEditText.text.toString()
+                ))
             findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
 
         }
