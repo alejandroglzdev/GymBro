@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.gymbro.R
 import com.example.gymbro.classes.WorkoutCard
 import com.example.gymbro.databinding.FragmentWorkoutMenuBinding
 import com.example.gymbro.ui.workoutMenu.adapter.WorkoutAdapter
@@ -57,8 +59,10 @@ class WorkoutMenuFragment : Fragment() {
             )
         )
 
+        configureUI()
         binding.workoutMenuRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.workoutMenuRecyclerView.adapter = WorkoutAdapter(data)
+
     }
 
     companion object {
@@ -79,5 +83,11 @@ class WorkoutMenuFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun configureUI(){
+        binding.emptyWorkoutButton.setOnClickListener {
+            findNavController().navigate(R.id.action_workoutMenuFragment_to_workoutInProgressFragment)
+        }
     }
 }
