@@ -11,8 +11,6 @@ import com.example.gymbro.R
 import com.example.gymbro.databinding.ActivityMainBinding
 import com.example.gymbro.ui.feed.fragment.FeedFragment
 import com.example.gymbro.ui.profile.ProfileFragment
-import com.example.gymbro.ui.search.fragment.SearchFragment
-import com.example.gymbro.ui.workoutMenu.fragment.WorkoutMenuFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -34,18 +32,6 @@ class MainActivity : AppCompatActivity() {
     private fun configureUI(navController: NavController) {
         binding.homeImageView.setOnClickListener {
             navController.navigate(R.id.action_global_feedFragment)
-
-        }
-
-        binding.dietImageView.setOnClickListener { }
-
-        binding.searchImageView.setOnClickListener {
-            navController.navigate(R.id.action_global_searchFragment)
-
-        }
-
-        binding.trainingImageView.setOnClickListener {
-            navController.navigate(R.id.action_global_workoutMenuFragment)
 
         }
 
