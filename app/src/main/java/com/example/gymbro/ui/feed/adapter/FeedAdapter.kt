@@ -1,20 +1,13 @@
 package com.example.gymbro.ui.feed.adapter
 
-import android.app.Activity
-import android.content.ContentValues
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbro.R
-import com.example.gymbro.classes.Post
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.gymbro.ui.feed.fragment.FeedFragment
 import com.example.gymbro.ui.feed.fragment.FeedFragmentDirections
 

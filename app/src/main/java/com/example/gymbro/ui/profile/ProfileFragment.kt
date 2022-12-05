@@ -1,24 +1,18 @@
 package com.example.gymbro.ui.profile
 
 import android.app.AlertDialog
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.SignInActivity
-import com.example.gymbro.SignUpActivity
-import com.example.gymbro.classes.Post
 import com.example.gymbro.classes.User
 import com.example.gymbro.databinding.FragmentProfileBinding
-import com.example.gymbro.databinding.FragmentSearchBinding
 import com.example.gymbro.ui.search.adapter.SearchAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore

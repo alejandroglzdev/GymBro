@@ -2,12 +2,9 @@ package com.example.gymbro.ui.feed.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
-import com.example.gymbro.classes.Post
 import com.example.gymbro.databinding.ActivityFeedBinding
-import com.example.gymbro.ui.feed.adapter.FeedAdapter
 
 class FeedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFeedBinding

@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
-import com.example.gymbro.classes.Post
 import com.example.gymbro.databinding.FragmentFeedBinding
 import com.example.gymbro.ui.feed.adapter.FeedAdapter
 
