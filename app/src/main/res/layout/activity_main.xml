@@ -50,17 +50,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/dietImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:src="@drawable/ic_diet"
-                app:tint="@color/white"/>
-
-        </LinearLayout>
+            android:layout_weight="1"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -80,17 +70,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/trainingImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:src="@drawable/ic_dumbbell"
-                app:tint="@color/white"/>
-
-        </LinearLayout>
+            android:layout_weight="1"/>
 
         <LinearLayout
             android:layout_width="0dp"
