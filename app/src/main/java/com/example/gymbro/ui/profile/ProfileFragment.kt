@@ -1,25 +1,18 @@
 package com.example.gymbro.ui.profile
 
 import android.app.AlertDialog
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.gymbro.R
 import com.example.gymbro.SignInActivity
-import com.example.gymbro.SignUpActivity
-import com.example.gymbro.classes.Post
 import com.example.gymbro.classes.User
 import com.example.gymbro.databinding.FragmentProfileBinding
-import com.example.gymbro.databinding.FragmentSearchBinding
-import com.example.gymbro.ui.search.adapter.SearchAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -141,95 +134,6 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-        val data = arrayOf(
-            Post(
-                "photo",
-                "AlejandroG",
-                "Terrassa",
-                R.drawable.logo_app_negro,
-                "1000",
-                "Description...",
-                "32",
-                R.color.white
-            ),
-            Post(
-                "photo",
-                "AdriF",
-                "Terrassa",
-                R.drawable.logo_app_blanco,
-                "32" + " likes",
-                "Description...",
-                "12",
-                R.color.black
-            ),
-            Post(
-                "photo",
-                "Adam",
-                "Barcelona",
-                R.drawable.logo_app_negro,
-                "345",
-                "Description...",
-                "100",
-                R.color.white
-            ),
-            Post(
-                "photo",
-                "AlejandroG",
-                "Terrassa",
-                R.drawable.logo_app_blanco,
-                "1000",
-                "Description...",
-                "32",
-                R.color.black
-            ),
-            Post(
-                "photo",
-                "AlejandroG",
-                "Terrassa",
-                R.drawable.logo_app_negro,
-                "1000",
-                "Description...",
-                "32",
-                R.color.white
-            ),
-            Post(
-                "photo",
-                "AdriF",
-                "Terrassa",
-                R.drawable.logo_app_blanco,
-                "32" + " likes",
-                "Description...",
-                "12",
-                R.color.black
-            ),
-            Post(
-                "photo",
-                "Adam",
-                "Barcelona",
-                R.drawable.logo_app_negro,
-                "345",
-                "Description...",
-                "100",
-                R.color.white
-            ),
-            Post(
-                "photo",
-                "AlejandroG",
-                "Terrassa",
-                R.drawable.logo_app_blanco,
-                "1000",
-                "Description...",
-                "32",
-                R.color.black
-            )
-
-        )
-
-        binding.profileRecyclerView.layoutManager = GridLayoutManager(context,3)
-        binding.profileRecyclerView.adapter = SearchAdapter(data)
 
     }
 

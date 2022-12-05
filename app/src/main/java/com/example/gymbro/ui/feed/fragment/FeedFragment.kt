@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbro.R
-import com.example.gymbro.classes.Post
 import com.example.gymbro.databinding.FragmentFeedBinding
-import com.example.gymbro.ui.feed.adapter.FeedAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,54 +33,6 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val data = arrayOf(
-            Post(
-                "photo",
-                "AlejandroG",
-                "Terrassa",
-                R.drawable.logo_app_negro,
-                "1000",
-                "Description...",
-                "32",
-                R.color.white
-            ),
-            Post(
-                "photo",
-                "AdriF",
-                "Terrassa",
-                R.drawable.logo_app_blanco,
-                "32" + " likes",
-                "Description...",
-                "12",
-                R.color.black
-            ),
-            Post(
-                "photo",
-                "Adam",
-                "Barcelona",
-                R.drawable.logo_app_negro,
-                "345",
-                "Description...",
-                "100",
-                R.color.white
-            ),
-            Post(
-                "photo",
-                "AlejandroG",
-                "Terrassa",
-                R.drawable.logo_app_blanco,
-                "1000",
-                "Description...",
-                "32",
-                R.color.black
-            )
-        )
-
-        binding.feedRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.feedRecyclerView.adapter = FeedAdapter(this,data)
-
-
 
     }
 
