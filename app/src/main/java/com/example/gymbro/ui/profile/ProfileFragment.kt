@@ -14,26 +14,21 @@ import com.example.gymbro.SignInActivity
 import com.example.gymbro.classes.User
 import com.example.gymbro.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     val db = Firebase.firestore
+    private lateinit var auth: FirebaseAuth
     val firebaseAuth = FirebaseAuth.getInstance()
+    private val database = FirebaseFirestore.getInstance()
 
     private lateinit var binding: FragmentProfileBinding
 
@@ -52,108 +47,100 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
-    private fun configureUI(){
+    private fun configureUI() {
 
-
-        binding.menuImageView.setOnClickListener(){
-            showPopup(binding.menuImageView)
-        }
 
     }
 
-    private fun setUI(){
+    private fun setUI() {
+        auth = FirebaseAuth.getInstance()
+        val user: FirebaseUser = auth.currentUser!!
         val docRef = db.collection("users").document(firebaseAuth.currentUser!!.uid)
+        println("current user: " + firebaseAuth.currentUser!!.uid)
         docRef.get().addOnSuccessListener { documentSnapshot ->
             val user = documentSnapshot.toObject<User>()
             if (user != null) {
-                binding.userNameTextView.text = user.username
-                binding.nameSurnameTextView.text = user.name + " " + user.surnames
-                binding.descriptionTextView.text = user.description
+                binding.usernameEditText.setText(user.username)
+                binding.phoneEditText.setText(user.phone)
+                binding.emailEditText.setText(user.email)
             }
+        }
+
+        binding.saveButton.setOnClickListener {
+            var phone = binding.phoneEditText.text.toString()
+            var username = binding.usernameEditText.text.toString()
+            database.collection("users").document(user.uid).set(
+                hashMapOf(
+                    "phone" to phone,
+                    "username" to username
+                ), SetOptions.merge()
+            )
+
         }
 
     }
 
-    fun showPopup(v : View){
-        val url = "https://git.copernic.cat/gonzalez.espejo.alejandro/gymbro.git"
-        val popup = PopupMenu(context, v)
-        val inflater: MenuInflater = popup.menuInflater
-        inflater.inflate(R.menu.profile_menu, popup.menu)
-        popup.setOnMenuItemClickListener { menuItem ->
-            when(menuItem.itemId){
-                R.id.about_menu-> {
-                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
-                        .setTitle("Gymbro App" + " Development phase")
-                        .setMessage("OpenSource project made with <3 by Alejandro Espejo & Adrià Fernández")
-                        .setPositiveButton("Check github") { _, _ ->
-                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                        }
-                        .setNegativeButton("Ok, bye") {_, _ ->}
-                        .show()
-                }
-                R.id.signout_menu-> {
-                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
-                        .setMessage("You're about to sign out, you will need to log in again later.")
-                        .setPositiveButton("Proceed") { _, _ ->
+//    fun showPopup(v : View){
+//        val url = "https://git.copernic.cat/gonzalez.espejo.alejandro/gymbro.git"
+//        val popup = PopupMenu(context, v)
+//        val inflater: MenuInflater = popup.menuInflater
+//        inflater.inflate(R.menu.profile_menu, popup.menu)
+//        popup.setOnMenuItemClickListener { menuItem ->
+//            when(menuItem.itemId){
+//                R.id.about_menu-> {
+//                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
+//                        .setTitle("Gymbro App" + " Development phase")
+//                        .setMessage("OpenSource project made with <3 by Alejandro Espejo & Adrià Fernández")
+//                        .setPositiveButton("Check github") { _, _ ->
+//                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+//                        }
+//                        .setNegativeButton("Ok, bye") {_, _ ->}
+//                        .show()
+//                }
+//                R.id.signout_menu-> {
+//                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
+//                        .setMessage("You're about to sign out, you will need to log in again later.")
+//                        .setPositiveButton("Proceed") { _, _ ->
+//
+//                            FirebaseAuth.getInstance().signOut()
+//                            val intent = Intent(context, SignInActivity::class.java)
+//                            startActivity(intent)
+//                        }
+//                        .setNegativeButton("Cancel") { _, _ -> }
+//                        .show()
+//
+//                }
+//
+//                R.id.editProfile_menu-> {
+//                    findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
+//
+//                }
+//            }
+//            true
+//        }
+//        popup.show()
+//    }
 
-                            FirebaseAuth.getInstance().signOut()
-                            val intent = Intent(context, SignInActivity::class.java)
-                            startActivity(intent)
-                        }
-                        .setNegativeButton("Cancel") { _, _ -> }
-                        .show()
-
-                }
-
-                R.id.editProfile_menu-> {
-                    findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
-
-                }
-            }
-            true
-        }
-        popup.show()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.profile_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.about_menu -> {
-
-            }
-
-            R.id.signout_menu -> {
-
-            }
-        }
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        inflater.inflate(R.menu.profile_menu, menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId){
+//            R.id.about_menu -> {
+//
+//            }
+//
+//            R.id.signout_menu -> {
+//
+//            }
+//        }
+//        return true
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

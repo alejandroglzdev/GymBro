@@ -6,231 +6,163 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/azul_oscuro"
     android:orientation="vertical"
-    tools:context=".ui.main.MainActivity">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:orientation="horizontal">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <TextView
-                android:id="@+id/userNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="24dp"
-                android:text="user_name"
-                android:textColor="@color/gris_oscuro"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/menuImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_expand" />
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </LinearLayout>
-
+    tools:context=".ui.editProfile.EditProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="15">
+        android:layout_weight="5"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_person"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:text="3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:text="POSTS" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:text="3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:text="FOLLOWERS" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:text="3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:text="FOLLOWED" />
-
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit profile"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_weight="35"
+        android:layout_weight="80"
         android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="20">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:boxStrokeColor="#0000ffff"
+            app:boxStrokeErrorColor="@color/error"
+            app:boxStrokeWidth="0dp"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountSubTextView">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/followButton"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameEditText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="FOLLOW"
-                android:textSize="10sp"
-                app:cornerRadius="30dp"
-                style="@style/blueDefaultButton"/>
+                android:layout_height="60dp"
+                android:background="@drawable/custom_login_edittext"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/gris_oscuro"
+                android:ems="10"
+                android:hint="Username
+"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:textColor="@color/white" />
 
-        </LinearLayout>
 
-        <LinearLayout
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/surnamesInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="50"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:boxStrokeColor="#0000ffff"
+            app:boxStrokeErrorColor="@color/error"
+            app:boxStrokeWidth="0dp"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountSubTextView">
 
-            <TextView
-                android:id="@+id/nameSurnameTextView"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gris_oscuro"
-                android:layout_marginTop="10dp"
-                android:text="Name and surname" />
+                android:layout_height="60dp"
+                android:background="@drawable/custom_login_edittext"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/gris_oscuro"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:paddingStart="20dp"
+                android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/descriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/gris_oscuro"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus et leo non volutpat. Suspendisse aliquam, nisi eget sollicitudi" />
 
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="30"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:boxStrokeColor="#0000ffff"
+            app:boxStrokeErrorColor="@color/error"
+            app:helperText="To change email contact support"
+            app:boxStrokeWidth="0dp"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountSubTextView">
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="Stats"
-                android:textSize="15sp"
-                app:cornerRadius="30dp"
-                style="@style/blueDefaultButton"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/custom_login_edittext"
+                android:drawableStart="@drawable/fui_ic_mail_white_24dp"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/gris_oscuro"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:textColor="@color/white" />
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calendar"
-                android:textSize="15sp"
-                app:cornerRadius="30dp"
-                style="@style/blueDefaultButton"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="Measures"
-                android:textSize="15sp"
-                app:cornerRadius="30dp"
-                style="@style/blueDefaultButton"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/genderInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:boxStrokeColor="#0000ffff"
+            app:boxStrokeErrorColor="@color/error"
+            app:boxStrokeWidth="0dp"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountSubTextView"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"
+            android:text="Save"
+            app:icon="@drawable/ic_save"
+            app:iconPadding="15dp"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/black"
+            app:cornerRadius="30dp"
+            style="@style/blueDefaultButton"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="45">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/profileRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
 
 
-    </LinearLayout>
+
 
 </LinearLayout>

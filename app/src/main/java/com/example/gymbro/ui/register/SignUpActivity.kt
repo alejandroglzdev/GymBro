@@ -85,6 +85,8 @@ class SignUpActivity : AppCompatActivity() {
                         val user: FirebaseUser = auth.currentUser!!
 
 
+
+
                         //agregamos la demás info dentro de la base de datos del usuario con userid
                         database.child("users").child(user.uid).child("username").setValue(username)
                         database.child("users").child(user.uid).child("phone").setValue(phone)

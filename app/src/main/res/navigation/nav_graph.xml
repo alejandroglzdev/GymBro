@@ -9,7 +9,11 @@
     <fragment
         android:id="@+id/feedFragment"
         android:name="com.example.gymbro.ui.feed.fragment.FeedFragment"
-        android:label="FeedFragment" /><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
+        android:label="FeedFragment" >
+        <action
+            android:id="@+id/action_feedFragment_to_PRFragment"
+            app:destination="@id/PRFragment" />
+    </fragment><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.gymbro.ui.profile.ProfileFragment"
@@ -28,4 +32,9 @@
             app:destination="@id/profileFragment" />
     </fragment>
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
+    <fragment
+        android:id="@+id/PRFragment"
+        android:name="com.example.gymbro.ui.pr.PRFragment"
+        android:label="PRFragment" />
+    <action android:id="@+id/action_global_prFragment" app:destination="@id/PRFragment" />
 </navigation>

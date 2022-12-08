@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.PrImageView.setOnClickListener{
+            navController.navigate(R.id.action_global_prFragment)
+        }
+
         binding.profileImageView.setOnClickListener {
             navController.navigate(R.id.action_global_profileFragment)
 

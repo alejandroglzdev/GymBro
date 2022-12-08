@@ -58,11 +58,11 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/searchImageView"
+                android:id="@+id/PrImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_weight"
                 app:tint="@color/white"/>
 
         </LinearLayout>
