@@ -23,8 +23,11 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class ProfileFragment : Fragment() {
+
+    val storageRef = Firebase.storage.reference
     val db = Firebase.firestore
     private lateinit var auth: FirebaseAuth
     val firebaseAuth = FirebaseAuth.getInstance()
@@ -78,65 +81,64 @@ class ProfileFragment : Fragment() {
 
         }
 
+        binding.aboutMenuButton.setOnClickListener{
+            showPopup(it)
+        }
+
+        binding.exitAccountButton.setOnClickListener{
+            exitAccount()
+        }
+
     }
 
-//    fun showPopup(v : View){
-//        val url = "https://git.copernic.cat/gonzalez.espejo.alejandro/gymbro.git"
-//        val popup = PopupMenu(context, v)
-//        val inflater: MenuInflater = popup.menuInflater
-//        inflater.inflate(R.menu.profile_menu, popup.menu)
-//        popup.setOnMenuItemClickListener { menuItem ->
-//            when(menuItem.itemId){
-//                R.id.about_menu-> {
-//                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
-//                        .setTitle("Gymbro App" + " Development phase")
-//                        .setMessage("OpenSource project made with <3 by Alejandro Espejo & Adrià Fernández")
-//                        .setPositiveButton("Check github") { _, _ ->
-//                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-//                        }
-//                        .setNegativeButton("Ok, bye") {_, _ ->}
-//                        .show()
-//                }
-//                R.id.signout_menu-> {
-//                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
-//                        .setMessage("You're about to sign out, you will need to log in again later.")
-//                        .setPositiveButton("Proceed") { _, _ ->
-//
-//                            FirebaseAuth.getInstance().signOut()
-//                            val intent = Intent(context, SignInActivity::class.java)
-//                            startActivity(intent)
-//                        }
-//                        .setNegativeButton("Cancel") { _, _ -> }
-//                        .show()
-//
-//                }
-//
-//                R.id.editProfile_menu-> {
-//                    findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
-//
-//                }
-//            }
-//            true
-//        }
-//        popup.show()
-//    }
+    private fun exitAccount() {
+        AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
+            .setMessage("You're about to sign out, you will need to log in again later.")
+            .setPositiveButton("Proceed") { _, _ ->
 
-//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//        inflater.inflate(R.menu.profile_menu, menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId){
-//            R.id.about_menu -> {
-//
-//            }
-//
-//            R.id.signout_menu -> {
-//
-//            }
-//        }
-//        return true
-//    }
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(context, SignInActivity::class.java)
+                startActivity(intent)
+            }
+            .setNegativeButton("Cancel") { _, _ -> }
+            .show()
+    }
+
+    fun showPopup(v : View){
+        val url = "https://git.copernic.cat/gonzalez.espejo.alejandro/gymbro.git"
+        val popup = PopupMenu(context, v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.profile_menu, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.about_menu-> {
+                    AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
+                        .setTitle("Gymbro App" + " Development phase")
+                        .setMessage("OpenSource project made by Alejandro Espejo & Adrià Fernández")
+                        .setPositiveButton("Check our GitLab") { _, _ ->
+                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                        }
+                        .setNegativeButton("Resume") {_, _ ->}
+                        .show()
+                }
+            }
+            true
+        }
+        popup.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.profile_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.about_menu -> {
+
+            }
+        }
+        return true
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

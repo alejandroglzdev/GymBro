@@ -5,9 +5,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.gymbro.databinding.ActivitySignUpBinding
 import com.example.gymbro.ui.register.VerifyActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -55,7 +57,12 @@ class SignUpActivity : AppCompatActivity() {
 
 
         binding.nextButton.setOnClickListener() {
-            signUp()
+            if (binding.passwd1EditText.text.toString() != binding.passwd2EditText.text.toString()) {
+                binding.passwd1EditText.setError("Password does not match")
+            } else {
+                signUp()
+            }
+
         }
     }
 
@@ -71,6 +78,7 @@ class SignUpActivity : AppCompatActivity() {
             && password1.isNotEmpty() && password2.isNotEmpty()
         ) {
 
+
             FirebaseAuth.getInstance()
                 .createUserWithEmailAndPassword(
                     email,
@@ -85,10 +93,9 @@ class SignUpActivity : AppCompatActivity() {
                         val user: FirebaseUser = auth.currentUser!!
 
 
-
-
                         //agregamos la demás info dentro de la base de datos del usuario con userid
-                        database.child("users").child(user.uid).child("username").setValue(username)
+                        database.child("users").child(user.uid).child("username")
+                            .setValue(username)
                         database.child("users").child(user.uid).child("phone").setValue(phone)
 
                         //agregamos los users al firestore
@@ -108,7 +115,10 @@ class SignUpActivity : AppCompatActivity() {
                             .document(firebaseAuth.currentUser!!.uid)
                             .set(userFirestore)
                             .addOnSuccessListener { documentReference ->
-                                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference}")
+                                Log.d(
+                                    TAG,
+                                    "DocumentSnapshot added with ID: ${documentReference}"
+                                )
                             }
                             .addOnFailureListener { e ->
                                 Log.w(TAG, "Error adding document", e)
@@ -119,19 +129,18 @@ class SignUpActivity : AppCompatActivity() {
                         updateUserInfoAndGoSignIn(email, password1)
                     } else {
                         //si el registro falla entra aqui
-                        Toast.makeText(this, "Error durante el registro", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error durante el registro", Toast.LENGTH_SHORT)
+                            .show()
                     }
 
 
                 }
-
-
         } else {
-            Toast.makeText(this, "Fill all the gaps", Toast.LENGTH_SHORT).show()
+            binding.passwd1EditText.setError("Passwords does not match")
         }
-
-
+        
     }
+
 
     private fun updateUserInfoAndGoSignIn(email: String, password1: String) {
         sendEmailVerification()
