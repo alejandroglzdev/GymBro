@@ -27,18 +27,25 @@ class ResetPasswordActivity : AppCompatActivity() {
 
     private fun configureUI() {
         binding.sendButton.setOnClickListener {
-            firebaseAuth.sendPasswordResetEmail(binding.usernameEditText.text.toString())
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(
-                            this,
-                            "If exists, email sent to the account",
-                            Toast.LENGTH_SHORT
-                        ).show()
+
+            if (binding.usernameEditText.text?.isNotEmpty() == true) {
+
+
+                firebaseAuth.sendPasswordResetEmail(binding.usernameEditText.text.toString())
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                this,
+                                "If exists, email sent to the account",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                }
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
+                val intent = Intent(this, SignInActivity::class.java)
+                startActivity(intent)
+            } else {
+                binding.usernameEditText.setError("Email is empty")
+            }
         }
 
         binding.arrowBackImageView.setOnClickListener {

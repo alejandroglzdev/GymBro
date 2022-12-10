@@ -55,9 +55,6 @@ class SignInActivity : AppCompatActivity() {
 
         binding.loginButtonSignIn.setOnClickListener {
             logInUser()
-            /* val intent = Intent(this, MainActivity::class.java)
-            UnComment to bypass login function
-            startActivity(intent) */
         }
 
         binding.signUpTextButton.setOnClickListener {
@@ -94,6 +91,8 @@ class SignInActivity : AppCompatActivity() {
 
 
                 }
+        } else {
+            binding.usernameEditTextSignIn.setError("Credentials must not be null")
         }
 
 

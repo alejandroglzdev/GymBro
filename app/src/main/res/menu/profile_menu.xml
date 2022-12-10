@@ -2,10 +2,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/about_menu"
         android:title="About"/>
-
-    <item android:id="@+id/editProfile_menu"
-        android:title="Edit profile"/>
-
-    <item android:id="@+id/signout_menu"
-        android:title="Sign Out"/>
 </menu>

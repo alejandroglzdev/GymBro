@@ -7,28 +7,12 @@
     >
 
     <fragment
-        android:id="@+id/commentFragment"
-        android:name="com.example.gymbro.ui.comment.fragment.CommentFragment"
-        android:label="CommentFragment" >
-        <argument
-            android:name="example"
-            app:argType="string"
-            app:nullable="true"
-            android:defaultValue="@null" />
-    </fragment>
-    <fragment
         android:id="@+id/feedFragment"
         android:name="com.example.gymbro.ui.feed.fragment.FeedFragment"
         android:label="FeedFragment" >
         <action
-            android:id="@+id/action_feedFragment_to_commentFragment"
-            app:destination="@id/commentFragment">
-            <argument
-                android:name="example"
-                app:argType="string"
-                app:nullable="true"
-                android:defaultValue="@null" />
-        </action>
+            android:id="@+id/action_feedFragment_to_PRFragment"
+            app:destination="@id/PRFragment" />
     </fragment><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
     <fragment
         android:id="@+id/profileFragment"
@@ -49,11 +33,8 @@
     </fragment>
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
     <fragment
-        android:id="@+id/workoutMenuFragment"
-        android:name="com.example.gymbro.ui.workoutMenu.fragment.WorkoutMenuFragment"
-        android:label="WorkoutMenuFragment" />
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.gymbro.ui.search.fragment.SearchFragment"
-        android:label="SearchFragment" /><action android:id="@+id/action_global_workoutMenuFragment" app:destination="@id/workoutMenuFragment"/><action android:id="@+id/action_global_searchFragment" app:destination="@id/searchFragment"/>
+        android:id="@+id/PRFragment"
+        android:name="com.example.gymbro.ui.pr.PRFragment"
+        android:label="PRFragment" />
+    <action android:id="@+id/action_global_prFragment" app:destination="@id/PRFragment" />
 </navigation>
