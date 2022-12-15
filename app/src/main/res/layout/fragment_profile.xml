@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit profile"
+            android:text="@string/edit_profile"
             android:textSize="18sp"
             android:textColor="@color/white"/>
 
@@ -85,8 +85,7 @@
                 android:drawablePadding="20dp"
                 android:drawableTint="@color/gris_oscuro"
                 android:ems="10"
-                android:hint="Username
-"
+                android:hint="@string/username"
                 android:inputType="textPersonName"
                 android:paddingStart="20dp"
                 android:textColor="@color/white" />
@@ -118,7 +117,7 @@
                 android:drawablePadding="20dp"
                 android:drawableTint="@color/gris_oscuro"
                 android:ems="10"
-                android:hint="Phone"
+                android:hint="@string/phone"
                 android:inputType="phone"
                 android:paddingStart="20dp"
                 android:textColor="@color/white" />
@@ -135,7 +134,7 @@
             android:layout_marginEnd="32dp"
             app:boxStrokeColor="#0000ffff"
             app:boxStrokeErrorColor="@color/error"
-            app:helperText="To change email contact support"
+            app:helperText="@string/change_email_support"
             app:boxStrokeWidth="0dp"
             app:helperTextEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -152,7 +151,7 @@
                 android:drawableTint="@color/gris_oscuro"
                 android:ems="10"
                 android:enabled="false"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textPersonName"
                 android:paddingStart="20dp"
                 android:textColor="@color/gris_oscuro" />
@@ -182,7 +181,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="24dp"
-            android:text="Save"
+            android:text="@string/save"
             app:icon="@drawable/ic_save"
             app:iconPadding="15dp"
             app:iconGravity="textEnd"

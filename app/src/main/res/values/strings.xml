@@ -1,5 +1,44 @@
 <resources>
     <string name="app_name">GymBro</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="insert_new_pr">Insert new PR</string>
+    <string name="exercise">Exercise</string>
+    <string name="weight">Weight</string>
+    <string name="reps">Reps</string>
+    <string name="date">Date</string>
+    <string name="save">Save</string>
+    <string name="add_personal_record">Add Personal record</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="please_enter_your_email_address_to_receive_a_verification_link">Please enter your email address to receive a verification link</string>
+    <string name="email_address">Email address</string>
+    <string name="send">Send</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="please_fill_the_input_below">Please fill the input below</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="next">Next</string>
+    <string name="sign_in">Sign In</string>
+    <string name="and_verify_your_account">and verify your account</string>
+    <string name="not_arriving">Not arriving?</string>
+    <string name="check_your_email">Check your email</string>
+    <string name="i_have_verified">I have verified</string>
+    <string name="resend">Resend</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="name">Name</string>
+    <string name="surnames">Surnames</string>
+    <string name="welcome_back">Welcome back,</string>
+    <string name="not_implemented_yet">Not implemented yet</string>
+    <string name="last_pr">Last PR</string>
+    <string name="total_pr_s">Total PR\'s</string>
+    <string name="ejercicio">Ejercicio</string>
+    <string name="peso">Peso</string>
+    <string name="fecha">Fecha</string>
+    <string name="repeticiones">repeticiones</string>
+    <string name="about">About</string>
+    <string name="change_email_support">To change email contact support</string>
 </resources>

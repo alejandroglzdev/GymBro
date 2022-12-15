@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymBro</string>
+    <string name="insert_new_pr">Añadir nueva PR</string>
+    <string name="exercise">Ejercicio</string>
+    <string name="weight">Peso</string>
+    <string name="reps">Repeticiones</string>
+    <string name="date">Fecha</string>
+    <string name="save">Guardar</string>
+    <string name="add_personal_record">Añadir nueva PR</string>
+    <string name="forgot_password">¿Has olvidado la contraseña?</string>
+    <string name="please_enter_your_email_address_to_receive_a_verification_link">Por favor, introduce tu correo electrónico para recibir un mail de veririficación.</string>
+    <string name="email_address">Correo electrónico</string>
+    <string name="send">Enviar</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="already_have_an_account">¿Ya eres miembro?</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="please_fill_the_input_below">Por favor, rellena todos los campos</string>
+    <string name="phone">Móvil</string>
+    <string name="email">Email</string>
+    <string name="repeat_password">Repite la contraseña</string>
+    <string name="next">Siguiente</string>
+    <string name="sign_in">Iniciar sesión</string>
+    <string name="and_verify_your_account">y verifica tu cuenta</string>
+    <string name="not_arriving">¿No ha llegado?</string>
+    <string name="check_your_email">Verifica tu correo</string>
+    <string name="i_have_verified">Ya he verificado</string>
+    <string name="resend">Reenviar</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="name">Nombre</string>
+    <string name="surnames">Apellidos</string>
+    <string name="welcome_back">Bienvenido,</string>
+    <string name="not_implemented_yet">Aún sin implementar</string>
+    <string name="last_pr">Última PR</string>
+    <string name="total_pr_s">Total de PRs</string>
+    <string name="ejercicio">Ejercicio</string>
+    <string name="peso">Peso</string>
+    <string name="fecha">Fecha</string>
+    <string name="repeticiones">Repeticiones</string>
+    <string name="about">Sobre nosotros</string>
+    <string name="change_email_support">Para modificar el email contacta con soporte</string>
+</resources>
