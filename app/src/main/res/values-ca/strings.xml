@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymBro</string>
+    <string name="insert_new_pr">Afegir nova PR</string>
+    <string name="exercise">Exercici</string>
+    <string name="weight">Pes</string>
+    <string name="reps">Repeticions</string>
+    <string name="date">Data</string>
+    <string name="save">Guardar</string>
+    <string name="add_personal_record">Afegir nova PR</string>
+    <string name="forgot_password">¿Has oblidat la contrasenya?</string>
+    <string name="please_enter_your_email_address_to_receive_a_verification_link">Si us plau, introdueix el teu correu per rebre un mail de confirmació.</string>
+    <string name="email_address">Email</string>
+    <string name="send">Enviar</string>
+    <string name="username">Usuari</string>
+    <string name="password">Contrasenya</string>
+    <string name="login">Iniciar sessió</string>
+    <string name="already_have_an_account">¿Ja ets usuari?</string>
+    <string name="sign_up">Registrar-se</string>
+    <string name="create_account">Crear compte</string>
+    <string name="please_fill_the_input_below">Si us plau, omple totes les dades</string>
+    <string name="phone">Mòbil</string>
+    <string name="email">Email</string>
+    <string name="repeat_password">Escriu de nou la contrasenya</string>
+    <string name="next">Següent</string>
+    <string name="sign_in">Iniciar sessió</string>
+    <string name="and_verify_your_account">i verifica el teu compte</string>
+    <string name="not_arriving">¿Encara no arriba?</string>
+    <string name="check_your_email">Verifica el teu correu</string>
+    <string name="i_have_verified">Ja he verificat</string>
+    <string name="resend">Reenviar</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="name">Nom</string>
+    <string name="surnames">Cognoms</string>
+    <string name="welcome_back">Benvingut ,</string>
+    <string name="not_implemented_yet">Encara sense implementar</string>
+    <string name="last_pr">Última PR</string>
+    <string name="total_pr_s">Total de PRs</string>
+    <string name="ejercicio">Exercici</string>
+    <string name="peso">Pes</string>
+    <string name="fecha">Data</string>
+    <string name="repeticiones">Repeticions</string>
+    <string name="about">Sobre nosaltres</string>
+    <string name="change_email_support">Per modifica el correu contacta amb suport.</string>
+</resources>
