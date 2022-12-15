@@ -57,9 +57,10 @@ class FeedFragment : Fragment() {
             }
         }
 
-        val totalPRs = db.collection("users").document(firebaseAuth.currentUser!!.uid).collection("personal_records").count()
+        db.collection("users").document(firebaseAuth.currentUser!!.uid).collection("personal_record").get().addOnSuccessListener { snap ->
+            binding.totalPRTextView.text = snap.size().toString()
+        }
 
-        binding.totalPRTextView.text = totalPRs.toString()
     }
 
 }
