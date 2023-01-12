@@ -55,7 +55,7 @@
                     android:drawablePadding="20dp"
                     android:drawableTint="@color/gris_oscuro"
                     android:ems="10"
-                    android:hint="@string/username"
+                    android:hint="@string/email"
                     android:inputType="textPersonName"
                     android:paddingStart="20dp"
                     android:textColor="@color/white" />
