@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/azul_oscuro"
     android:orientation="vertical"
-    tools:context=".ui.editProfile.EditProfileFragment">
+    tools:context="com.app.gymbro.ui.editProfile.EditProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_marginTop="20sp"
