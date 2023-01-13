@@ -155,7 +155,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun sendEmailVerification() {
 
 
-        firebaseUser!!.sendEmailVerification()
+        auth.currentUser!!.sendEmailVerification()
             .addOnSuccessListener {
                 Toast.makeText(this, "Email sent...", Toast.LENGTH_SHORT).show()
             }

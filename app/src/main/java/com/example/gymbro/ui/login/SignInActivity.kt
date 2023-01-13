@@ -77,12 +77,12 @@ class SignInActivity : AppCompatActivity() {
                 .addOnCompleteListener {
 
                     if (it.isSuccessful) {
-                        if (firebaseUser?.isEmailVerified == true) {
+                        //if (firebaseUser?.isEmailVerified == true) {
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
-                        } else {
-                            Toast.makeText(this, "Mail isn't verified", Toast.LENGTH_SHORT).show()
-                        }
+                       // } else {
+                          //  Toast.makeText(this, "Mail isn't verified", Toast.LENGTH_SHORT).show()
+                       // }
 
                     } else {
                         //si el login falla entra aqui
