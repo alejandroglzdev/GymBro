@@ -14,14 +14,32 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import java.util.logging.Level.INFO
 
+/**
+ * SignInActivity is an AppCompatActivity that handles the sign in process for the user.
+ * It allows the user to sign in with their email and password, and navigate to the MainActivity if the sign in is successful.
+ * Additionally, it has a "forgot password" button that navigates to the ResetPasswordActivity and a "sign up" button that navigates to the SignUpActivity.
+ */
 class SignInActivity : AppCompatActivity() {
-
+    /**
+     * The binding variable for the activity layout.
+     */
     private lateinit var binding: ActivitySignInBinding
 
+    /**
+     * The FirebaseAuth instance for handling authentication.
+     */
     val firebaseAuth = FirebaseAuth.getInstance()
 
+    /**
+     * The current Firebase user.
+     */
     val firebaseUser = firebaseAuth.currentUser
 
+    /**
+     * Called when the activity is starting.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle).
+     * Otherwise it is null.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
@@ -30,6 +48,9 @@ class SignInActivity : AppCompatActivity() {
         configureUI()
     }
 
+    /**
+     * Called when the activity is becoming visible to the user.
+     */
     override fun onStart() {
         super.onStart()
         /*
@@ -46,6 +67,9 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Configures the UI elements of the activity.
+     */
     private fun configureUI() {
         binding.forgotPasswordButtonSignIn.setOnClickListener {
             val intent = Intent(this, ResetPasswordActivity::class.java)
@@ -62,6 +86,10 @@ class SignInActivity : AppCompatActivity() {
         }
 
     }
+
+    /**
+     * Logs in the user with the provided email and password.
+     */
 
     private fun logInUser() {
 

@@ -12,9 +12,21 @@ import com.app.gymbro.databinding.ActivityMainBinding
 import com.app.gymbro.ui.feed.fragment.FeedFragment
 import com.app.gymbro.ui.profile.ProfileFragment
 
+/**
+ * MainActivity is the entry point of the app, it's the first activity that runs when the app is launched.
+ * It sets up the navigation between fragments using a NavHostFragment and a NavController.
+ * It also sets up the onClickListeners for the bottom navigation buttons to navigate to different fragments.
+ */
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    /**
+     * onCreate is called when the activity is created, it inflates the layout and sets it as the content view.
+     * It also sets up the NavController and navigates to the FeedFragment.
+     * It also calls the configureUI method to set up the onClickListeners for the bottom navigation buttons.
+     *
+     * @param savedInstanceState Bundle containing the activity's previously saved state
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -28,6 +40,15 @@ class MainActivity : AppCompatActivity() {
 
         configureUI(navController)
     }
+
+    /**
+     * configureUI sets up the onClickListeners for the bottom navigation buttons.
+     * When the home button is clicked it navigates to the FeedFragment.
+     * When the PR button is clicked it navigates to the PRFragment.
+     * When the profile button is clicked it navigates to the ProfileFragment.
+     *
+     * @param navController NavController to handle navigation between fragments.
+     */
 
     private fun configureUI(navController: NavController) {
         binding.homeImageView.setOnClickListener {

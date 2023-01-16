@@ -31,16 +31,16 @@ class VerifyActivity : AppCompatActivity() {
         val email = bundle?.getString("email")
         val password = bundle?.getString("password")
 
-        binding.buttonCheck.setOnClickListener(){
+        binding.buttonCheck.setOnClickListener {
             checkIfVerified(email, password)
         }
 
-        binding.buttonNext.setOnClickListener(){
+        binding.buttonNext.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 
-        binding.textViewResend.setOnClickListener(){
+        binding.textViewResend.setOnClickListener {
             Toast.makeText(this, "Mail sent, check your spam inbox", Toast.LENGTH_SHORT).show()
         }
 

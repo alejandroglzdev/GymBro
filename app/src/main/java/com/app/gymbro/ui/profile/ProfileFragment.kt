@@ -1,5 +1,6 @@
 package com.app.gymbro.ui.profile
 
+import User
 import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
@@ -11,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.app.gymbro.R
 import com.app.gymbro.SignInActivity
-import com.app.gymbro.classes.User
 import com.app.gymbro.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -138,11 +138,6 @@ class ProfileFragment : Fragment() {
             }
         }
         return true
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
 }

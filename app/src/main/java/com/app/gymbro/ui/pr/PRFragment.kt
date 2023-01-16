@@ -1,5 +1,6 @@
 package com.app.gymbro.ui.pr
 
+import PR
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,6 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.gymbro.R
-import com.app.gymbro.classes.PR
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
@@ -19,6 +19,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.QuerySnapshot
 
+/**
+ * A simple [Fragment] subclass.
+ * This fragment is used to display information about your personal records.
+ */
 class PRFragment : Fragment() {
 
     private val database = FirebaseFirestore.getInstance()
@@ -26,11 +30,15 @@ class PRFragment : Fragment() {
     lateinit var prAdapter: AdapterPR
     val firebaseAuth = FirebaseAuth.getInstance()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    /**
+     * Inflates the layout for this fragment, sets the UI and returns the root view.
+     *
+     * @param inflater LayoutInflater object used to inflate the layout.
+     * @param container ViewGroup object that contains this fragment.
+     * @param savedInstanceState Bundle object that saves the state of this fragment.
+     *
+     * @return The root view of this fragment
+     */
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,6 +70,10 @@ class PRFragment : Fragment() {
     private fun initViews() {
 
     }
+
+    /**
+     * This method load all the data from the Firebase Database.
+     */
 
     private fun loadPRData() {
         database.collection("users").document(firebaseAuth.currentUser!!.uid).collection("personal_record")

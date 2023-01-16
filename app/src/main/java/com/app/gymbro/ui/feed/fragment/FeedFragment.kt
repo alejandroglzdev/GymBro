@@ -1,5 +1,6 @@
 package com.app.gymbro.ui.feed.fragment
 
+import User
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.gymbro.classes.User
 import com.app.gymbro.databinding.FragmentFeedBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -17,6 +17,12 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 
+/**
+ * A simple [Fragment] subclass.
+ * This fragment is used to display information about the user's profile and personal records in a gym training app.
+ * it uses Firebase library to retrieve data from the database.
+ *
+ */
 class FeedFragment : Fragment() {
     private lateinit var binding: FragmentFeedBinding
     val db = Firebase.firestore
@@ -25,6 +31,15 @@ class FeedFragment : Fragment() {
     private val database = FirebaseFirestore.getInstance()
     private lateinit var userTextView: TextView
 
+    /**
+     * Inflates the layout for this fragment, sets the UI and returns the root view.
+     *
+     * @param inflater LayoutInflater object used to inflate the layout.
+     * @param container ViewGroup object that contains this fragment.
+     * @param savedInstanceState Bundle object that saves the state of this fragment.
+     *
+     * @return The root view of this fragment
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,10 +54,10 @@ class FeedFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
+    /**
+     * Retrieve user data and personal records from Firebase database and update the UI.
+     *
+     */
 
     private fun setUI() {
         auth = FirebaseAuth.getInstance()

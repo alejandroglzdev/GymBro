@@ -56,7 +56,7 @@ class SignUpActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
 
-        binding.nextButton.setOnClickListener() {
+        binding.nextButton.setOnClickListener {
             if (binding.passwd1EditText.text.toString() != binding.passwd2EditText.text.toString()) {
                 binding.passwd1EditText.setError("Password does not match")
             } else {
