@@ -20,7 +20,7 @@ class SignInActivity : AppCompatActivity() {
 
     val firebaseAuth = FirebaseAuth.getInstance()
 
-    val firebaseUser = firebaseAuth.currentUser
+    var firebaseUser = firebaseAuth.currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,23 +65,24 @@ class SignInActivity : AppCompatActivity() {
 
     private fun logInUser() {
 
-        if (binding.usernameEditTextSignIn.text.toString()
+        if (binding.usernameEditTextSignIn.text.toString().trim()
                 .isNotEmpty() && binding.passwordEditTextSignIn.text.toString().isNotEmpty()
         ) {
             FirebaseAuth.getInstance()
                 .signInWithEmailAndPassword(
-                    binding.usernameEditTextSignIn.text.toString(),
+                    binding.usernameEditTextSignIn.text.toString().trim(),
                     binding.passwordEditTextSignIn.text.toString()
                 )
                 .addOnCompleteListener {
 
                     if (it.isSuccessful) {
-                        //if (firebaseUser?.isEmailVerified == true) {
+                        this.firebaseUser = FirebaseAuth.getInstance().currentUser
+                        if (firebaseUser?.isEmailVerified == true) {
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
-                       // } else {
-                          //  Toast.makeText(this, "Mail isn't verified", Toast.LENGTH_SHORT).show()
-                       // }
+                        } else {
+                            Toast.makeText(this, "Mail isn't verified", Toast.LENGTH_SHORT).show()
+                        }
 
                     } else {
                         //si el login falla entra aqui
