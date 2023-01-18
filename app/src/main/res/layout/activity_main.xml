@@ -43,7 +43,8 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/white"/>
+                app:tint="@color/white"
+                android:contentDescription="home menu Image" />
 
         </LinearLayout>
 
@@ -63,7 +64,8 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:src="@drawable/ic_weight"
-                app:tint="@color/white"/>
+                app:tint="@color/white"
+                android:contentDescription="main menu image" />
 
         </LinearLayout>
 
@@ -83,7 +85,8 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/white"/>
+                app:tint="@color/white"
+                android:contentDescription="profile menu image" />
 
         </LinearLayout>
     </LinearLayout>
