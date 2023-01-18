@@ -1,5 +1,6 @@
 package com.app.gymbro.ui.pr
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -67,6 +68,7 @@ class IntroPrActivity : AppCompatActivity() {
                         "repeticiones" to binding.repEditTextSignIn.text.toString()
                     )
                 )
+            setShowReviewToFalse()
             goBackPr()
         }
 
@@ -75,6 +77,16 @@ class IntroPrActivity : AppCompatActivity() {
          */
         private fun goBackPr() {
             onBackPressed() //TODO: Deprecated
+        }
+
+        /**
+        * It creates a boolean in the SharedPreferences
+        */
+        private fun setShowReviewToFalse() {
+            val sharedPreference = getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
+            var editor = sharedPreference.edit()
+            editor.putBoolean("showReviewCard",false)
+            editor.commit()
         }
 
     }
