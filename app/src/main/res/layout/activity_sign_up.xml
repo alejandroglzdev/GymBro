@@ -16,14 +16,15 @@
 
         <ImageView
             android:id="@+id/arrowBackImageView"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_arrow_back"
-            app:tint="@color/azul_turquesa"/>
+            app:tint="@color/azul_turquesa"
+            android:contentDescription="go back image" />
 
         <TextView
             android:id="@+id/createAccountTextView"
@@ -221,15 +222,15 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/nextButton"
+            style="@style/blueDefaultButton"
             android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:layout_marginBottom="24dp"
             android:text="@string/next"
-            style="@style/blueDefaultButton"
+            app:cornerRadius="30dp"
             app:icon="@drawable/ic_forward_password"
             app:iconGravity="textEnd"
             app:iconTint="@color/black"
-            app:cornerRadius="30dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayoutSignUpText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
