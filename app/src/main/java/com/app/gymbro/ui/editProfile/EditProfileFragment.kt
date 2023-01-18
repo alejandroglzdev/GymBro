@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.app.gymbro.R
-import com.app.gymbro.classes.User
 import com.app.gymbro.databinding.FragmentEditProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -27,9 +26,23 @@ val db = Firebase.firestore
  * A simple [Fragment] subclass.
  * Use the [EditProfileFragment.newInstance] factory method to
  * create an instance of this fragment.
+ *
+ * This fragment is used to edit the user's profile information in a gym training app.
+ * it uses Firebase library to update the user's data in the database.
+ *
  */
 class EditProfileFragment : Fragment() {
     private lateinit var binding: FragmentEditProfileBinding
+
+    /**
+     * Inflates the layout for this fragment and returns the root view.
+     *
+     * @param inflater LayoutInflater object used to inflate the layout.
+     * @param container ViewGroup object that contains this fragment.
+     * @param savedInstanceState Bundle object that saves the state of this fragment.
+     *
+     * @return The root view of this fragment
+     */
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,12 +53,25 @@ class EditProfileFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * called after the view is created
+     *
+     * @param view The view of this fragment
+     * @param savedInstanceState Bundle object that saves the state of this fragment
+     *
+     */
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         saveData()
 
 
     }
+
+    /**
+     * Save the edited data by the user to the Firebase database and navigate to another fragment.
+     *
+     */
 
     private fun saveData() {
         binding.saveButton.setOnClickListener {

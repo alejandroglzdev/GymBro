@@ -17,6 +17,16 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
+/**
+ * SignUpActivity is the class that handles the user registration process.
+ * It allows the user to input their information such as username, phone number, email and password.
+ * Once the user has entered all the required information, the class creates a new user account
+ * using FirebaseAuth and stores the additional information in the Firebase database under the user's unique ID.
+ * Also creates the user on a firestore database with additional fields such as name, surnames, birthdate and gender.
+ * The user will be redirected to SignInActivity when they press the arrowBackImageView or signInTextButton.
+ *
+ * @author Gymbro Team
+ */
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
 
@@ -27,7 +37,12 @@ class SignUpActivity : AppCompatActivity() {
     val db = Firebase.firestore
     val firebaseUser = firebaseAuth.currentUser
 
-
+    /**
+     * onCreate method is called when the activity is first created.
+     * It sets the layout for the activity and initializes the UI elements.
+     *
+     * @param savedInstanceState Bundle containing the data it most recently supplied in
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -36,7 +51,10 @@ class SignUpActivity : AppCompatActivity() {
         configureUI()
     }
 
-
+    /**
+     * configureUI method sets up the UI elements such as buttons and EditText fields
+     * for the user to input their information.
+     */
     private fun configureUI() {
         binding.arrowBackImageView.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
@@ -56,7 +74,7 @@ class SignUpActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
 
-        binding.nextButton.setOnClickListener() {
+        binding.nextButton.setOnClickListener {
             if (binding.passwd1EditText.text.toString() != binding.passwd2EditText.text.toString()) {
                 binding.passwd1EditText.setError("Password does not match")
             } else {
@@ -66,6 +84,11 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * signUp method creates a new user account with the provided email and password, and stores
+     * the additional information (username, phone number) in the Firebase database under the user's unique ID.
+     * Also creates the user on a firestore database with additional fields such as name, surnames, birthdate and gender.
+     */
     private fun signUp() {
 
         var username = binding.usernameEditText.text.toString()
@@ -141,7 +164,11 @@ class SignUpActivity : AppCompatActivity() {
         
     }
 
-
+    /**
+     * updateUserInfoAndGoSignIn method sends a email verification to the user and redirects the user to VerifyActivity
+     * @param email the email of the user
+     * @param password1 the password of the user
+     */
     private fun updateUserInfoAndGoSignIn(email: String, password1: String) {
         sendEmailVerification()
         //vamos a la actividad entercodeactivity
@@ -152,9 +179,11 @@ class SignUpActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    /**
+     * sendEmailVerification method sends a email verification to the user
+     *
+     */
     private fun sendEmailVerification() {
-
-
         auth.currentUser!!.sendEmailVerification()
             .addOnSuccessListener {
                 Toast.makeText(this, "Email sent...", Toast.LENGTH_SHORT).show()

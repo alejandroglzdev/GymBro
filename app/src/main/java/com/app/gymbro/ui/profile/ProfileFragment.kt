@@ -1,5 +1,6 @@
 package com.app.gymbro.ui.profile
 
+import User
 import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
@@ -11,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.app.gymbro.R
 import com.app.gymbro.SignInActivity
-import com.app.gymbro.classes.User
 import com.app.gymbro.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -25,6 +25,17 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
+/**
+ * ProfileFragment is a Fragment class that handles the user profile feature in the app.
+ *
+ * It uses Firebase Authentication and Firebase Firestore to handle the user's authentication and
+ * retrieve the user's information from the database. It allows the user to update their information and
+ * sign out of the app.
+ *
+ * The class has a button that displays a popup menu with options such as about the app and the repository link.
+ *
+ * @author Gymbro Team
+ */
 class ProfileFragment : Fragment() {
 
     val storageRef = Firebase.storage.reference
@@ -35,6 +46,9 @@ class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
 
+    /**
+     *  Inflates the layout, sets the content view and calls setUI and configureUI methods.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,11 +64,17 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     *  Configures the UI elements by setting click listeners on buttons.
+     */
     private fun configureUI() {
-
 
     }
 
+    /**
+     *  Sets the UI elements by getting the current user,
+     *  retrieves the user's information from the firestore, sets the UI elements.
+     */
     private fun setUI() {
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser = auth.currentUser!!
@@ -88,14 +108,15 @@ class ProfileFragment : Fragment() {
         binding.exitAccountButton.setOnClickListener{
             exitAccount()
         }
-
     }
 
+    /**
+     *  Sign out the user and redirects to SignInActivity.
+     */
     private fun exitAccount() {
         AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle)
             .setMessage("You're about to sign out, you will need to log in again later.")
             .setPositiveButton("Proceed") { _, _ ->
-
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(context, SignInActivity::class.java)
                 startActivity(intent)
@@ -104,6 +125,9 @@ class ProfileFragment : Fragment() {
             .show()
     }
 
+    /**
+     *  Display a Popup menu with options such as about the app and the repository link.
+     */
     fun showPopup(v : View){
         val url = "https://git.copernic.cat/gonzalez.espejo.alejandro/gymbro.git"
         val popup = PopupMenu(context, v)
@@ -138,11 +162,6 @@ class ProfileFragment : Fragment() {
             }
         }
         return true
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
 }
