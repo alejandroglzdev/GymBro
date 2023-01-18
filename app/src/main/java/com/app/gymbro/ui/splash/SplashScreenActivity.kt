@@ -7,6 +7,12 @@ import android.os.Handler
 import com.app.gymbro.R
 import com.app.gymbro.SignInActivity
 
+/**
+ * SplashScreenActivity is a class that shows the splash screen when the app is launched.
+ * It displays an image for 1 second before redirecting the user to the SignInActivity.
+ *
+ * @author GymBro Team
+ */
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

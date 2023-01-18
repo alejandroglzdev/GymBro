@@ -7,16 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.gymbro.databinding.PrCardviewBinding
 
 /**
-
-Adapter for the PR RecyclerView.
-
-@param list A list of Personal Records to be displayed in the RecyclerView
-
-This class is used to populate a RecyclerView with Personal Records.
-
-It provides methods for updating the elements in the RecyclerView and binding data to the viewholder.
-
-@author Gymbro Team
+ * Adapter for the PR RecyclerView.
+ * This class is used to populate a RecyclerView with Personal Records.
+ * It provides methods for updating the elements in the RecyclerView and binding data to the viewholder.
+ *
+ * @param list A list of Personal Records to be displayed in the RecyclerView
+ *
+ * @author Gymbro Team
  */
 
 class AdapterPR(private val list: ArrayList<PR> = arrayListOf()) :

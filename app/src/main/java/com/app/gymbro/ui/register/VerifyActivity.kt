@@ -14,6 +14,13 @@ import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 import kotlin.concurrent.schedule
 
+/**
+ * VerifyActivity is the class that handles the email verification process for new users.
+ * It allows the user to input the verification code sent to their email.
+ * Once the user has entered the correct code, the class verifies the email and redirects the user to SignInActivity.
+ *
+ * @author Gymbro Team
+*/
 class VerifyActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVerifyBinding
@@ -22,7 +29,12 @@ class VerifyActivity : AppCompatActivity() {
 
     val firebaseUser = firebaseAuth.currentUser
 
-
+    /**
+     * onCreate method is called when the activity is first created.
+     * It sets the layout for the activity and initializes the UI elements.
+     *
+     * @param savedInstanceState Bundle containing the data it most recently supplied in
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityVerifyBinding.inflate(layoutInflater)
@@ -48,7 +60,16 @@ class VerifyActivity : AppCompatActivity() {
 
     }
 
-
+    /**
+     * checkIfVerified method is used to check if the email is verified or not.
+     * It takes in email and password as input and uses them to sign in the user.
+     * If the sign in is successful, it checks if the email is verified or not.
+     * If the email is verified, it plays a loading animation and redirects the user to SignInActivity.
+     * If the email is not verified, it displays a message asking the user to check their inbox.
+     *
+     * @param email the email of the user
+     * @param password the password of the user
+     */
     private fun checkIfVerified(email: String?, password: String?) {
 
             if (email != null) {

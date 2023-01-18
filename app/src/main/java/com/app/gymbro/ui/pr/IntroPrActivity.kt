@@ -9,14 +9,15 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
-    /**
-    This class represents the IntroPrActivity in the app.
-    It's main function is to handle the UI for adding new personal records to the user's Firebase Firestore database.
-    The class uses Firebase Firestore and Firebase Auth for adding new personal records and authenticating the user.
-    @property binding: The data binding object for the activity's layout
-    @property database: A FirebaseFirestore instance for accessing the database
-    @property auth: A FirebaseAuth instance for authenticating the user
-    */
+/**
+ * This class represents the IntroPrActivity in the app.
+ * It's main function is to handle the UI for adding new personal records to the user's Firebase Firestore database.
+ * The class uses Firebase Firestore and Firebase Auth for adding new personal records and authenticating the user.
+ *
+ * @property binding: The data binding object for the activity's layout
+ * @property database: A FirebaseFirestore instance for accessing the database
+ * @property auth: A FirebaseAuth instance for authenticating the user
+ */
 
 class IntroPrActivity : AppCompatActivity() {
 
