@@ -16,14 +16,15 @@
 
         <ImageView
             android:id="@+id/arrowBackImageView"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_arrow_back"
-            app:tint="@color/azul_turquesa"/>
+            app:tint="@color/azul_turquesa"
+            android:contentDescription="go back image" />
 
         <TextView
             android:id="@+id/createAccountTextView"
